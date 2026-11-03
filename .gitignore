@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# test artefacts
+/test-results/
+/playwright-report/
+
+# allow the documented env template
+!.env.example

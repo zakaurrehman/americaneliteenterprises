@@ -1,0 +1,22 @@
+/ | mobile-applied | Perf 95 | A11y 100 | BP 100 | SEO 100 | LCP 2.2 s | TBT 100 ms | CLS 0
+/ | desktop | Perf 99 | A11y 100 | BP 100 | SEO 100 | LCP 0.9 s | TBT 70 ms | CLS 0
+/ | mobile-simulated | Perf 78 | A11y 100 | BP 100 | SEO 100 | LCP 3.8 s | TBT 420 ms | CLS 0
+/companies/ | mobile-applied | Perf 96 | A11y 100 | BP 100 | SEO 100 | LCP 2.2 s | TBT 60 ms | CLS 0.003
+/companies/ | desktop | Perf 100 | A11y 100 | BP 100 | SEO 100 | LCP 0.8 s | TBT 10 ms | CLS 0
+/companies/ | mobile-simulated | Perf 83 | A11y 100 | BP 100 | SEO 100 | LCP 3.9 s | TBT 180 ms | CLS 0
+/industries/healthcare/ | mobile-applied | Perf 95 | A11y 100 | BP 100 | SEO 100 | LCP 2.3 s | TBT 80 ms | CLS 0
+/industries/healthcare/ | desktop | Perf 99 | A11y 100 | BP 100 | SEO 100 | LCP 0.9 s | TBT 40 ms | CLS 0
+/industries/healthcare/ | mobile-simulated | Perf 83 | A11y 100 | BP 100 | SEO 100 | LCP 3.7 s | TBT 280 ms | CLS 0
+/dr-daniel-davidson/ | mobile-applied | Perf 95 | A11y 100 | BP 100 | SEO 100 | LCP 2.3 s | TBT 70 ms | CLS 0.016
+/dr-daniel-davidson/ | desktop | Perf 99 | A11y 100 | BP 100 | SEO 100 | LCP 0.8 s | TBT 40 ms | CLS 0
+/dr-daniel-davidson/ | mobile-simulated | Perf 85 | A11y 100 | BP 100 | SEO 100 | LCP 3.7 s | TBT 250 ms | CLS 0
+
+# After switching to the metallic logo (2026-11-04, machine under background load; benchmarkIndex 427-975 between runs)
+/ | mobile-applied | Perf 81 / 73 / 81 | A11y 100 | BP 100 | SEO 100 | LCP 2.4-2.8 s | TBT 530-820 ms | CLS 0
+/ | desktop | Perf 93 | A11y 100 | BP 100 | SEO 100 | LCP 1.0 s | TBT 180 ms | CLS 0
+/about/ | mobile-applied | Perf 83 | A11y 100 | BP 100 | SEO 100 | LCP 2.7 s | TBT 390 ms | CLS 0
+/about/ | desktop | Perf 99 | A11y 100 | BP 100 | SEO 100 | LCP 0.8 s | TBT 30 ms | CLS 0
+# A/B, homepage mobile-applied, alternating runs:
+#   logo images blocked: Perf 75, 69 (TBT 610, 860 ms)
+#   logo images loaded:  Perf 84, 73 (TBT 270, 770 ms)
+# Blocking the logo did not improve the score, so the lower figures are machine load, not the logo.

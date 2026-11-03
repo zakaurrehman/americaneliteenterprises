@@ -1,26 +1,426 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------
+   American Elite — design tokens (light theme)
+   Colour scheme: the light mode of 21st.dev "Cyber Cyan Remix" (surfaces,
+   text, blue primary, teal secondary, cyan tint), with the azure of
+   21st.dev "Twitter Azure". Values are the themes' own oklch tokens; the
+   two grey text tokens are slightly darker than the theme's for WCAG AA.
+   Contrast ratios are documented in docs/design-system.md.
+------------------------------------------------------------------ */
+@theme {
+  --color-page: oklch(0.984 0.003 247.858); /* background #f8fafc */
+  --color-page-alt: oklch(0.968 0.007 247.895); /* muted — alternate sections */
+  --color-surface: oklch(1 0 0); /* card */
+  --color-surface-raised: oklch(1 0 0); /* popover */
+  --color-tint: oklch(0.968 0.007 247.895); /* hover fills */
+  --color-tint-strong: oklch(0.945 0.012 250);
+  --color-line: oklch(0.929 0.013 255.532); /* border #e2e8f0 */
+  --color-line-strong: oklch(0.871 0.005 286.285); /* input */
+  --color-fg: oklch(0.206 0.039 265.547); /* foreground — 17:1 */
+  --color-fg-muted: oklch(0.47 0.04 257); /* secondary text — AA on all surfaces */
+  --color-fg-subtle: oklch(0.52 0.04 257); /* tertiary text — 5:1 on page-alt */
+  --color-accent: oklch(0.545 0.215 262.741); /* primary blue — 5:1 */
+  --color-accent-soft: oklch(0.7 0.15 255); /* gradients and glows only */
+  --color-accent-deep: oklch(0.39 0.163 262.704); /* accent-foreground — 9.5:1 */
+  --color-on-accent: oklch(0.984 0.003 247.858); /* text on accent / dark fills */
+  --color-azure: oklch(0.672 0.161 245); /* Twitter Azure — decorative only */
+  --color-azure-text: oklch(0.55 0.16 245); /* azure for text — 4.5:1 */
+  --color-teal: oklch(0.673 0.133 166.273); /* Cyber Cyan secondary — decorative */
+  --color-teal-text: oklch(0.5 0.11 185); /* teal for text — 5.2:1 */
+  --color-cyan-tint: oklch(0.974 0.021 176.033); /* Cyber Cyan accent surface */
+  --color-danger: oklch(0.52 0.19 27); /* error text — 6:1 */
+
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+
+  --animate-marquee: marquee 50s linear infinite;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --header-h: 5rem;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+  background: var(--color-page);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-page);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ------------------------------------------------------------------
+   Layout & type utilities
+------------------------------------------------------------------ */
+@utility container-x {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility display-hero {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 6.6vw, 6.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+@utility display-lg {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 4.8vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+@utility display-md {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+@utility prose-editorial {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  max-width: 40rem;
+  & p + p {
+    margin-top: 1.25em;
+  }
+}
+
+/* Below-the-fold sections: the browser skips style, layout and paint until
+   they approach the viewport. The intrinsic size is remembered once seen. */
+@utility cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1000px;
+}
+
+/* Accent text: deep blue → blue → azure (every stop ≥ 4.5:1 on the page). */
+@utility text-accent-gradient {
+  background: linear-gradient(100deg, #0e3b9a 0%, #2463ea 50%, #0077c7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Frosted surface: near-white fill, hairline border, soft shadow (no blur). */
+@utility glass {
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.92), rgb(255 255 255 / 0.78));
+  border: 1px solid var(--color-line);
+  box-shadow:
+    0 1px 2px rgb(15 23 42 / 0.04),
+    0 8px 24px -12px rgb(15 23 42 / 0.10);
+}
+
+/* Blurred glass, reserved for floating UI (header, menus). */
+@utility glass-blur {
+  background: rgb(255 255 255 / 0.85);
+  border: 1px solid var(--color-line);
+  box-shadow: 0 12px 40px -16px rgb(15 23 42 / 0.18);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+/* Faint technical grid used behind heroes. */
+@utility tech-grid {
+  background-image:
+    linear-gradient(to right, rgb(15 23 42 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(15 23 42 / 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+}
+
+/* ------------------------------------------------------------------
+   Motion — scroll reveals
+   Hidden only while <html class="js"> is set by the inline boot script;
+   the class is removed if the client never boots. Reduced motion shows
+   everything immediately.
+------------------------------------------------------------------ */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity 0.9s var(--ease-expo),
+    transform 1s var(--ease-expo);
+  transition-delay: calc(var(--reveal-delay, 0) * 80ms);
+}
+
+html.js [data-reveal="fade"] {
+  transform: none;
+}
+
+html.js [data-reveal="scale"] {
+  transform: scale(0.96);
+}
+
+html.js [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------------------------------------
+   Motion — hero entrance (pure CSS, independent of hydration)
+------------------------------------------------------------------ */
+/* Lines start partly inside their mask so the headline counts as LCP. */
+@keyframes rise-in {
+  from {
+    transform: translate3d(0, 55%, 0);
+    opacity: 0.35;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glow-drift {
+  0%,
+  100% {
+    transform: translate3d(-6%, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(6%, -4%, 0) scale(1.1);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0.01;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.page-enter {
+  animation: page-enter 0.55s var(--ease-expo) both;
+}
+
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.line-mask > span {
+  display: block;
+  animation: rise-in 1.1s var(--ease-expo) both;
+  animation-delay: calc(var(--line, 0) * 0.08s);
+}
+
+.enter-fade-up {
+  animation: fade-up 0.9s var(--ease-expo) both;
+  animation-delay: var(--enter-delay, 0.5s);
+}
+
+.enter-fade {
+  animation: fade-in 1.4s var(--ease-soft) both;
+  animation-delay: var(--enter-delay, 0s);
+}
+
+/* ------------------------------------------------------------------
+   Interactive primitives
+------------------------------------------------------------------ */
+
+/* Cursor spotlight: --mx/--my are set by the global Effects component. */
+.spotlight {
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-soft);
+  background: radial-gradient(
+    420px circle at var(--mx) var(--my),
+    rgb(36 99 234 / 0.08),
+    transparent 45%
+  );
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Accent edge light that follows the cursor along the card border. */
+.edge-light::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    260px circle at var(--mx, 50%) var(--my, 50%),
+    rgb(36 99 234 / 0.55),
+    transparent 60%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-soft);
+}
+
+.edge-light:hover::after,
+.edge-light:focus-within::after {
+  opacity: 1;
+}
+
+/* Magnetic buttons: --tx/--ty set by Effects on fine pointers. */
+[data-magnetic] {
+  transform: translate3d(var(--tx, 0), var(--ty, 0), 0);
+  transition: transform 0.5s var(--ease-expo);
+}
+
+.arrow-nudge,
+.arrow-nudge-diag {
+  transition: transform 0.4s var(--ease-expo);
+}
+
+.group:hover .arrow-nudge,
+.group:focus-visible .arrow-nudge {
+  transform: translate3d(4px, 0, 0);
+}
+
+.group:hover .arrow-nudge-diag,
+.group:focus-visible .arrow-nudge-diag {
+  transform: translate3d(3px, -3px, 0);
+}
+
+/* Light sweep on the primary button. */
+.sheen {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateX(-120%) skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.45), transparent);
+  transition: transform 0.9s var(--ease-expo);
+}
+
+.sheen:hover::after {
+  transform: translateX(120%) skewX(-20deg);
+}
+
+/* Scroll-lit statement: each word's opacity follows --p (0→1). */
+.lit-word {
+  opacity: clamp(0.6, calc(var(--p, 1) * var(--n) - var(--i) + 1), 1);
+  transition: opacity 0.2s linear;
+}
+
+/* ------------------------------------------------------------------
+   Reduced motion
+------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html.js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .lit-word {
+    opacity: 1;
+  }
+
+  [data-magnetic] {
+    transform: none;
+  }
 }

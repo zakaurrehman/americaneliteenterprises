@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# American Elite Enterprises — website
 
-## Getting Started
+The redesigned official website of **American Elite Enterprises**, a private group of businesses headquartered in Los Angeles with roots dating back to 1991. It replaces the previous WordPress/Elementor site at americaneliteenterprises.com while keeping every existing URL.
 
-First, run the development server:
+![Homepage](docs/screenshots/after-home-w1920.jpg)
+
+## What's here
+
+- **Homepage** — futuristic light design: the "Orbit" hero (45 businesses orbiting 9 sectors around the lion logo), a scroll-lit introduction, an interactive sector explorer, core entities, timeline, leadership, philosophy and contact. Colour scheme from the 21st.dev "Cyber Cyan Remix" and "Twitter Azure" themes.
+- **About** (`/about/`), **Our Companies** directory (`/companies/`), **Industries** (`/industries/` + nine sector pages), **Leadership** (`/dr-daniel-davidson/`), **Contact** (`/contact/`).
+- **Eight entity profiles** at their original WordPress URLs (e.g. `/american-elite-foundation/`).
+- Sitemap, robots.txt, structured data, generated share image, and redirects for every retired WordPress route.
+
+All 45 businesses (49 websites) from the original site are listed, each linking to its real website. Nothing was invented — see [docs/verification-report.md](docs/verification-report.md) for sources and caveats.
+
+## Run it locally
+
+Requires Node.js 20.9+ (developed on Node 24).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev            # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production build:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start              # http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Development server |
+| `npm run build` / `npm start` | Production build / server |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | Generates route types, then `tsc --noEmit` |
+| `npm run test:e2e` | Playwright suite (routes, SEO, redirects, navigation, directory, form, axe accessibility, internal links). Uses the locally installed Chrome; run `npm run build` first. |
+| `npm run check:links` | Checks every external company URL |
+| `npm run screenshots -- <baseUrl> <outDir> <routes>` | Full-page screenshots at desktop and mobile widths |
 
-To learn more about Next.js, take a look at the following resources:
+## Contact form
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The form validates on the server and has spam protection (honeypot, minimum fill time, per-IP rate limit). To deliver messages by email, copy `.env.example` to `.env.local` and set:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+RESEND_API_KEY=...
+CONTACT_TO_EMAIL=Info@americaneliteconsultants.com
+CONTACT_FROM_EMAIL="American Elite <website@americaneliteenterprises.com>"
+```
 
-## Deploy on Vercel
+Without these, the form never claims a message was sent: it tells the visitor that online messaging is not connected and shows the phone number and email instead.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The site is a Next.js 16 app. All pages are prerendered, but the contact form uses a Server Action, so it needs a **Node.js host** — for example Vercel, or a Node.js app on Hostinger (the current host). The current WordPress site runs on Hostinger's PHP hosting, which can't run this app as is.
+
+1. Deploy to a staging URL first and review it.
+2. Set the three contact environment variables.
+3. Point `americaneliteenterprises.com` at the new deployment. The redirects in `next.config.ts` take care of retired WordPress URLs.
+4. Submit `https://americaneliteenterprises.com/sitemap.xml` in Google Search Console.
+
+Nothing has been deployed. The live WordPress site has not been changed.
+
+## Documentation
+
+- [Design direction](docs/design-direction.md) — the three concepts and why one was chosen
+- [Design system](docs/design-system.md) — colour, type, spacing, components, motion
+- [Component selection](docs/component-selection.md) — 21st.dev research, what was used and rejected
+- [Architecture](docs/architecture.md) — structure, rendering, content model
+- [SEO audit](docs/seo-audit.md) — before and after
+- [Verification report](docs/verification-report.md) — test results, Lighthouse, link check, open issues

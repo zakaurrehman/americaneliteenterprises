@@ -1,0 +1,52 @@
+WARN   0 https://americaneliteecom.com/ (ENOTFOUND)
+WARN   0 https://fflatprooff.com/ (EAI_AGAIN)
+WARN   0 https://globalbusinesssolution.in/ (ENOTFOUND)
+WARN   0 https://goodneighborclinics.net/ (ENOTFOUND)
+WARN   0 https://underbedstorage.com/ (CERT_HAS_EXPIRED)
+OK   200 http://AmericanEliteExpertProfessionalConsultants.com → https://americaneliteglobalsolutions.com/expert-professional-consulting/
+OK   200 http://brandshoesonly.com/
+OK   200 https://18002thelaw.com/
+OK   200 https://alldigtech.com/
+OK   200 https://americaneliteaccountants.com/
+OK   200 https://americanelitebilling.com/
+OK   200 https://americaneliteclub.com/
+OK   200 https://americaneliteconsultants.com/
+OK   200 https://americanelitedigital.com/ → https://www.americanelitedigital.com/
+OK   200 https://americaneliteexpertwitnesses.com/
+OK   200 https://americanelitefoundation.org/
+OK   200 https://americaneliteglobal.com/
+OK   200 https://americaneliteinstitute.com/
+OK   200 https://americanelitelawyers.com/
+OK   200 https://americanelitetraining.com/
+OK   200 https://axidentlawyers.com/
+OK   200 https://certifyserviceanimal.org/
+OK   200 https://dramericanelite.com/
+OK   200 https://drnewme.com/
+OK   200 https://elderlyhealth.us/
+OK   200 https://entireopathicmedicine.com/
+OK   200 https://everestpeakhomehealthcare.com/
+OK   200 https://globalstarmakers.com/
+OK   200 https://goodneighborclinics.com/
+OK   200 https://homehealthcollaborativealliance.com/
+OK   200 https://hospitalswithoutwalls.com/ → https://www.hospitalswithoutwalls.com/
+OK   200 https://hospitalswithoutwalls.us/
+OK   200 https://hospitalwithoutwalls.ca/
+OK   200 https://iconicdr.com/
+OK   200 https://idealservicestaff.com/
+OK   200 https://jewelryformylife.com/
+OK   200 https://messiahinternationalfoundation.org/
+OK   200 https://mobilecaringdocs.com/
+OK   200 https://mobilewounddocs.com/
+OK   200 https://multispecialtymed.com/
+OK   200 https://perfectvisions.info/
+OK   200 https://registerserviceanimal.org/
+OK   200 https://techartdigital.com/
+OK   200 https://toplawyers.mobi/
+WARN 404 https://americaneliteglobalsolutions.com/
+WARN 500 http://americaneliteexecutives.com → https://americaneliteexecutives.com/
+WARN 500 http://americanelitelenders.com → https://americanelitelenders.com/
+WARN 500 https://businessstarmakers.com/
+WARN 500 https://hospitalswithoutwalls.app/
+WARN 500 https://serviceanimal.us/
+
+39/50 reachable, 11 to verify manually.
