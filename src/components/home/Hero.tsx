@@ -106,7 +106,7 @@ export function Hero() {
               className={`flex flex-col gap-1 px-5 py-4 sm:px-6 sm:py-5 ${i > 0 ? "sm:border-l sm:border-line" : ""} ${i % 2 === 1 ? "border-l border-line sm:border-l" : ""} ${i < 4 ? "border-b border-line sm:border-b-0" : ""} ${i === 4 ? "col-span-2 sm:col-span-1" : ""}`}
             >
               <dt className="label-mono order-2 text-[0.68rem] text-fg-subtle">{s.label}</dt>
-              <dd className="order-1 font-display text-2xl font-semibold tracking-tight text-fg sm:text-3xl">
+              <dd className="order-1 font-display text-2xl font-semibold tracking-tight text-fg">
                 {s.value}
               </dd>
             </div>

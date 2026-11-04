@@ -92,7 +92,7 @@ export default function FounderPage() {
 
                 {i === 0 && (
                   <figure data-reveal className="my-16 border-y border-line py-12">
-                    <blockquote className="font-display text-2xl font-medium leading-snug tracking-tight text-fg sm:text-3xl">
+                    <blockquote className="font-display text-xl font-medium leading-snug tracking-tight text-fg sm:text-2xl">
                       “I am truly doing what I was put on this earth to do. To build businesses,
                       to optimize them, to teach self-help and entrepreneurship, and to
                       participate in charitable services, helping the world!”

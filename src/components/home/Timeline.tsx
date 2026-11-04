@@ -48,7 +48,7 @@ export function Timeline() {
               className={`glass spotlight relative rounded-2xl p-6 sm:p-7 ${right ? "md:col-start-2" : "md:col-start-1"}`}
             >
               <div className="flex items-center justify-between gap-4">
-                <p className="font-display text-4xl font-semibold tracking-tight text-accent-gradient sm:text-5xl">
+                <p className="font-display text-3xl font-semibold tracking-tight text-accent-gradient sm:text-4xl">
                   {item.year}
                 </p>
                 <p className="label-mono rounded-full border border-line px-2.5 py-1 text-[0.62rem] text-fg-subtle">

@@ -48,7 +48,7 @@ export function Leadership() {
             style={{ "--reveal-delay": 2 } as React.CSSProperties}
             className="mt-8 border-l-2 border-accent pl-6"
           >
-            <p className="font-display text-2xl font-medium leading-snug tracking-tight text-fg sm:text-3xl">
+            <p className="font-display text-xl font-medium leading-snug tracking-tight text-fg sm:text-2xl">
               “{founder.motto}.”
             </p>
             <footer className="mt-2 text-sm text-fg-subtle">The motto Dr. Davidson lives by</footer>

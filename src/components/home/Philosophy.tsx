@@ -36,7 +36,7 @@ export function Philosophy() {
           <blockquote
             data-reveal
             style={{ "--reveal-delay": 1 } as React.CSSProperties}
-            className="font-display text-[clamp(1.7rem,3.8vw,3.25rem)] font-medium leading-[1.15] tracking-[-0.035em] text-fg"
+            className="font-display text-[clamp(1.4rem,2.6vw,2.25rem)] font-medium leading-[1.25] tracking-[-0.035em] text-fg"
           >
             “{founder.quote}”
           </blockquote>
@@ -55,7 +55,7 @@ export function Philosophy() {
               className="glass spotlight edge-light group relative overflow-hidden rounded-2xl p-7"
             >
               <span className="font-mono text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-10 font-display text-3xl font-semibold tracking-tight">{p.title}</h3>
+              <h3 className="mt-10 font-display text-2xl font-semibold tracking-tight">{p.title}</h3>
               <p className="mt-3 leading-relaxed text-fg-muted">{p.body}</p>
               <span
                 aria-hidden

@@ -61,7 +61,7 @@ The site was first built in the themes' dark mode. If a dark mode is wanted late
 
 Self-hosted via `next/font`; one variable file per family (three font files in total).
 
-Scale utilities: `display-hero` (clamp 2.6→6.25rem), `display-lg` (2.1→4.25rem), `display-md` (1.6→2.5rem), `label-mono` (0.75rem mono caps). Accent emphasis in headlines uses `text-accent-gradient` (soft cyan → cyan → azure).
+Scale utilities: `display-hero` (clamp 2.4→4.75rem), `display-lg` (1.9→3.25rem), `display-md` (1.5→2rem), statement paragraphs (1.4→2.25rem), `label-mono` (0.75rem mono caps). Accent emphasis in headlines uses `text-accent-gradient` (soft cyan → cyan → azure).
 
 ## Surfaces
 

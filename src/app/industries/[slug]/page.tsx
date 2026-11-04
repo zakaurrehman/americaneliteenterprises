@@ -55,7 +55,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
             <p
               data-reveal
               style={{ "--reveal-delay": 1 } as React.CSSProperties}
-              className="mt-6 font-display text-7xl font-semibold tracking-tight text-fg"
+              className="mt-6 font-display text-6xl font-semibold tracking-tight text-fg"
             >
               {list.length}
             </p>

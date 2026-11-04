@@ -14,7 +14,7 @@ export function Introduction() {
         </h2>
 
         <LitStatement
-          className="mt-8 max-w-6xl font-display text-[clamp(1.75rem,4.2vw,3.6rem)] font-medium leading-[1.12] tracking-[-0.035em] text-fg text-balance"
+          className="mt-8 max-w-5xl font-display text-[clamp(1.4rem,2.6vw,2.25rem)] font-medium leading-[1.25] tracking-[-0.035em] text-fg text-balance"
           text="American Elite Enterprises is a private group of businesses that has been around since 1991 in various forms — the parent organization of companies across healthcare, business, technology, charities, legal services, consulting, e-commerce, education and inventions."
         />
 
@@ -31,7 +31,7 @@ export function Introduction() {
             <div className="absolute inset-0 bg-gradient-to-t from-page via-page/50 to-transparent" />
             <div className="relative flex h-full min-h-[18rem] flex-col justify-end">
               <p className="label-mono text-[0.68rem] text-accent">Headquarters</p>
-              <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+              <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
                 Los Angeles, California
               </h3>
               <p className="mt-3 max-w-md text-fg-muted">
@@ -43,7 +43,7 @@ export function Introduction() {
 
           <article data-reveal style={{ "--reveal-delay": 1 } as React.CSSProperties} className="glass spotlight relative overflow-hidden rounded-3xl p-7">
             <p className="label-mono text-[0.68rem] text-fg-subtle">Since</p>
-            <p className="mt-4 font-display text-6xl font-semibold tracking-tight text-accent-gradient">1991</p>
+            <p className="mt-4 font-display text-5xl font-semibold tracking-tight text-accent-gradient">1991</p>
             <p className="mt-4 text-fg-muted">
               In business for more than three decades, in various forms.
             </p>

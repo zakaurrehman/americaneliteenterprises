@@ -32,7 +32,7 @@ export function ContactCta({ index }: { index?: string }) {
             id="cta-title"
             data-reveal
             style={{ "--reveal-delay": 1 } as React.CSSProperties}
-            className="display-hero mt-6 max-w-4xl text-balance"
+            className="display-lg mt-6 max-w-3xl text-balance"
           >
             Let&apos;s start a <span className="text-accent-gradient">conversation.</span>
           </h2>

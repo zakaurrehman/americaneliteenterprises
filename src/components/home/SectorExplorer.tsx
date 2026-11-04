@@ -126,12 +126,12 @@ export function SectorExplorer() {
                 <p className="label-mono text-[0.68rem] text-accent">
                   Sector {String(active + 1).padStart(2, "0")} / {sectors.length}
                 </p>
-                <h3 className="mt-3 font-display text-4xl font-semibold tracking-[-0.03em] sm:text-5xl">
+                <h3 className="mt-3 font-display text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
                   {sector.name}
                 </h3>
               </div>
               <p className="text-right">
-                <span className="block font-display text-5xl font-semibold tracking-tight text-accent-gradient sm:text-6xl">
+                <span className="block font-display text-4xl font-semibold tracking-tight text-accent-gradient sm:text-5xl">
                   {list.length}
                 </span>
                 <span className="text-sm text-fg-muted">{list.length === 1 ? "business" : "businesses"}</span>
