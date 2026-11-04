@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CompanyCard } from "@/components/companies/CompanyCard";
+import { CompanyLogo } from "@/components/companies/CompanyLogo";
 import { ContactCta } from "@/components/sections/ContactCta";
 import { PageHero } from "@/components/sections/PageHero";
 import { ButtonLink } from "@/components/ui/Button";
@@ -33,6 +34,7 @@ export function EntityPage({ slug }: { slug: string }) {
           { name: sector.name, path: sectorHref(sector.slug) },
           { name: entity.name, path: `/${entity.slug}/` },
         ]}
+        mark={<CompanyLogo name={entity.name} size="xl" highlight />}
         eyebrow={`${sector.name} · Part of American Elite Enterprises`}
         title={entity.name}
         lead={entity.tagline}

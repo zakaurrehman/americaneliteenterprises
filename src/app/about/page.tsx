@@ -11,7 +11,7 @@ import { getSector, sectors } from "@/content/portfolio";
 import { founder } from "@/content/story";
 import { addressLine, site } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
-import emblem from "../../../public/brand/american-elite-emblem.png";
+import crest from "../../../public/brand/american-elite-crest.png";
 
 export const metadata = pageMetadata({
   title: "About American Elite — A Private Group of Businesses Since 1991",
@@ -163,8 +163,8 @@ export default function AboutPage() {
         <div className="container-x grid items-center gap-14 lg:grid-cols-12">
           <div data-reveal className="mx-auto w-full max-w-xs lg:col-span-4 lg:max-w-none">
             <Image
-              src={emblem}
-              alt="The American Elite Enterprises emblem: a gold lion in a laurel wreath above an American flag ribbon"
+              src={crest}
+              alt="The American Elite Enterprises crest: a jewelled gold crown above an ornate gold frame enclosing a gold lion in a laurel wreath, an American flag ribbon and the words American Elite Enterprises"
               sizes="(min-width: 1024px) 30vw, 320px"
               className="h-auto w-full drop-shadow-[0_0_60px_rgb(36_99_234/0.18)]"
             />

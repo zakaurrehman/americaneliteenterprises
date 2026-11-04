@@ -1,3 +1,7 @@
+// SUPERSEDED: the client declined the metallic logo; the website uses the
+// original crest (see export-company-logos.cjs). Running this script would
+// overwrite the crest favicons.
+//
 // Exports the metallic logo (brand/logo-metallic, made by build-metallic-logo.cjs)
 // as the website's assets: public/brand files, favicons and the apple icon.
 //

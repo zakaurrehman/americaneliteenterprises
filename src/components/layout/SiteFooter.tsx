@@ -4,7 +4,7 @@ import Link from "next/link";
 import { entities } from "@/content/entities";
 import { sectorHref, sectors } from "@/content/portfolio";
 import { addressLine, mainNav, site } from "@/content/site";
-import lockup from "../../../public/brand/american-elite-lockup.png";
+import crest from "../../../public/brand/american-elite-crest.png";
 
 async function CopyrightYear() {
   "use cache";
@@ -22,12 +22,13 @@ export function SiteFooter() {
       <div className="container-x pb-10 pt-20 lg:pt-24">
         <div className="grid gap-14 pb-14 lg:grid-cols-12">
           <div data-reveal className="lg:col-span-5">
-            <Image
-              src={lockup}
-              alt="American Elite Enterprises"
-              sizes="304px"
-              className="h-auto w-[19rem] max-w-full"
-            />
+            <div className="flex items-center gap-5">
+              <Image src={crest} alt="" sizes="104px" className="h-24 w-auto sm:h-26" />
+              <p className="font-heritage leading-none text-fg">
+                <span className="block text-xl font-bold tracking-[0.08em]">American Elite</span>
+                <span className="mt-2 block text-xs font-semibold tracking-[0.34em] text-fg-muted">Enterprises</span>
+              </p>
+            </div>
             <p className="mt-6 max-w-sm leading-relaxed">
               A private group of businesses headquartered in Los Angeles, California — with roots
               dating back to 1991.

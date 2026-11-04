@@ -1,10 +1,28 @@
 # American Elite Enterprises — logo
 
-## Metallic logo (used on the website)
+## The crest (used on the website)
+
+![American Elite Enterprises crest](source/original-crest.png)
+
+The website uses the group's **original crest**, unchanged: a jewelled gold crown over an ornate gold frame, enclosing the lion in a laurel wreath, the flag ribbon and "American Elite / Enterprises". It is the logo of the original website (`wp-content/uploads/2023/02/2023-logo-small.png`), kept in `source/original-crest.png`.
+
+**Why.** Dr. Daniel Davidson asked (4 November 2026) for American Elite Enterprises to keep its old, traditional look, because its history and age are part of its value. He also asked that every business keep its own logo and identity: no shared emblem with only the name changed. The redesigned logos below were therefore set aside. Each company's own logo is shown on the website; see `docs/company-logos.md`.
+
+**Where it appears:**
+- header and footer: the crest beside the name, set in Cinzel (classical Roman capitals);
+- About page, centre of the homepage orbit and the Open Graph image;
+- Organization structured data;
+- favicons and apple icon.
+
+`source/export-company-logos.cjs` writes the crest's website files: `public/brand/american-elite-crest.png` and `american-elite-crest-sm.webp`, plus `src/app/icon1.png`, `icon2.png` and `apple-icon.png`.
+
+**Possible light refresh (not done).** The client allowed "a bit more refreshed if needed". The source is a 1000px raster image. A designer could redraw it as vector art in the same design, which would keep the look while making it sharp at every size and usable in print.
+
+## Metallic logo (not used — declined by the client)
 
 ![Metallic logo](logo-metallic/lockup-full.png)
 
-`logo-metallic/` holds the logo now used on the website. It is the **American Elite Digital** artwork (gold lion, laurel wreath, flag ribbon and blue "AMERICAN ELITE") with "DIGITAL" replaced by **"ENTERPRISES"** in matching glossy red italic. The gold rules on either side are shortened to fit the longer word. Everything except that bottom line is the Digital artwork, unchanged.
+`logo-metallic/` holds a logo that was briefly used on the website and then declined by the client. Do not run `source/export-metallic-web.cjs`: it would overwrite the crest favicons. It is the **American Elite Digital** artwork (gold lion, laurel wreath, flag ribbon and blue "AMERICAN ELITE") with "DIGITAL" replaced by **"ENTERPRISES"** in matching glossy red italic. The gold rules on either side are shortened to fit the longer word. Everything except that bottom line is the Digital artwork, unchanged.
 
 | File | Size | Use |
 | --- | --- | --- |
@@ -34,7 +52,7 @@ The lettering is Montserrat ExtraBold Italic, condensed and slanted a little fur
 3. Run `node source/build-metallic-logo.cjs`. This writes `logo-metallic/`.
 4. Run `node source/export-metallic-web.cjs`. This writes the website files: `public/brand/american-elite-lockup.png`, `american-elite-emblem.png`, `american-elite-emblem-sm.webp` and `american-elite-logo.png`, plus `src/app/icon1.png`, `icon2.png` and `apple-icon.png`.
 
-## Flat vector logo
+## Flat vector logo (not used — set aside)
 
 ![Primary logo](logo/preview.png)
 
@@ -124,10 +142,4 @@ Every hue comes from the original crest; only lightness and saturation were adju
 
 ## On the website
 
-The website uses the **metallic logo** described above:
-- the horizontal lockup in the header and footer;
-- the emblem on the About page, at the centre of the homepage orbit and in the Open Graph image;
-- the stacked logo in structured data;
-- the emblem as the favicons.
-
-The flat vector logo was the site logo before this switch. It remains the better choice for print because it is vector art.
+The website uses the **original crest** (see the top of this file). The flat vector logo and the metallic logo were each used for a time during the redesign and then set aside at the client's request.

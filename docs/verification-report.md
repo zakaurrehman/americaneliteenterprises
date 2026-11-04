@@ -55,34 +55,15 @@ The first build of the new design scored **54** on mobile (CLS 0.775, TBT 0.5–
 
 Result: mobile **98** (applied), TBT 40–60 ms, CLS 0.
 
-## Logo switch — metallic logo
+## Logos — the crest and each company's own logo
 
-The flat lion logo was replaced by the metallic logo (`brand/logo-metallic/`):
-- the horizontal lockup in the header, mobile menu and footer;
-- the emblem on the About page, at the centre of the orbit and in the Open Graph image;
-- the stacked logo in the Organization structured data;
-- emblem favicons and apple icon.
+After reviewing the redesign, Dr. Daniel Davidson asked for two changes (4 November 2026). First, every business keeps its own logo and identity, with no shared emblem carrying only a different name. Second, American Elite Enterprises keeps its old, traditional look. Done:
 
-The header and footer images go through `next/image`, which serves resized WebP (the header logo is 12 KB on mobile). The orbit loads a 288px WebP (49 KB). The alt text and the link's accessible name are unchanged ("American Elite Enterprises").
+- **Group logo:** the original crest from the WordPress site, unchanged (crown, gold frame, lion, laurel and flag). It appears in the header and footer beside the name in Cinzel (classical capitals), on About, at the centre of the orbit, in the Open Graph image, in structured data and as the favicons. The metallic logo was removed from the site.
+- **Company logos:** 39 of the 45 companies now show their own logo, taken from their websites and shown unchanged on a white tile. It appears on directory and industry cards, in the homepage sector explorer, in the mega menu, and at the top of each entity page. The other 6 show initials until a logo is supplied. Sources and the missing list are in `docs/company-logos.md`.
+- Logo files are small WebP files (max 400×200, 648 KB for all 39) served as-is. The first test run, with every logo going through the image optimiser, timed out on 3 pages on a cold server. Serving the files directly fixed it: with the image cache cleared, **75 of 75 tests passed on the first run**.
 
-Checks after the switch:
-- typecheck and lint: clean;
-- build: 32 routes;
-- Playwright: **75 passed**, with no tests changed;
-- screenshots: no console errors, no horizontal overflow.
-
-On the first Playwright run, 5 tests timed out while the machine was busy. A full re-run passed 75 of 75, and a targeted re-run with the image cache cleared passed all 29 affected tests.
-
-Lighthouse after the switch (machine under background load, see `docs/lighthouse/summary.txt`):
-
-| Page | Mobile, applied | Desktop |
-| --- | --- | --- |
-| `/` | 73–81 | 93 |
-| `/about/` | 83 | 99 |
-
-Accessibility, Best Practices and SEO stayed at 100.
-
-To check whether the logo caused the lower mobile scores, alternating runs were made with the two logo images blocked. Blocked, the homepage scored 75 and 69; loaded, 84 and 73. Blocking the logo did not help, so the drop is the machine's load, as in the earlier dark-theme A/B, not the logo. The 95–96 figures above were measured on an idle machine. **Re-measure with PageSpeed Insights after deploy.**
+Checks: typecheck and lint clean, build 32 routes, Playwright 75 passed with no tests changed.
 
 ## Visual review
 
@@ -117,7 +98,7 @@ Unchanged from the previous audit: 39 of 50 URLs respond normally. To verify man
 - **Counts** shown on the site are computed from the content data: **45 businesses**, **9 sectors**, **49 websites** (45 companies plus the extra domains of Hospitals Without Walls and Good Neighbor Clinics). *Correction:* earlier documentation said "52 websites", which wrongly counted founder and duplicate links; 49 is correct.
 - **Descriptions** come from each company's own site or the original entity pages; 17 companies have none because none could be verified.
 - **Founder milestones** (1991, 1997, 2004, 2006, 2012) come from the original site and are labelled as founder milestones; qualifications are as stated on the original site.
-- **Logo**: the metallic logo from `brand/logo-metallic/`. It is the American Elite Digital artwork with "ENTERPRISES" in place of "DIGITAL", made at the client's request (see `brand/README.md`). Before that, the site used the flat lion logo from `brand/logo/`.
+- **Logos**: the group's original crest (from the original website) and each company's own logo from its website (`docs/company-logos.md`). The flat and metallic redesigned logos were set aside at the client's request (`brand/README.md`).
 - **Photography**: Unsplash (Unsplash License). IDs: hero-towers `1486406146926-c627a92ad1ab`, los-angeles `1534190760961-74e8c1c5c3da`, healthcare `1532938911079-1b06ac7ceec7`, business `1511818966892-d7d671e672a2`, technology `1518770660439-4636190af475`, charities `1469571486292-0ba58a3f068b`, legal `1589829545856-d10d557cf95f`, consulting `1454165804606-c3d57bc86b40`, ecommerce `1607082348824-0a96f2a4b9da`, education `1505664194779-8beaceb93744`, inventions `1503387762-592deb58ef4e`, architecture-curve `1493397212122-2b85dda8106b`, architecture-white `1487958449943-2429e8be8625`, handshake `1521791136064-7986c2920216`. The founder portrait is the one published on the original site.
 - **Colour scheme**: 21st.dev "Cyber Cyan Remix" and "Twitter Azure" theme tokens (see component-selection.md for licence notes).
 
@@ -128,5 +109,5 @@ Unchanged from the previous audit: 39 of 50 URLs respond normally. To verify man
 3. **Privacy policy** — none existed; one should be added before launch because the form collects personal data.
 4. **21st.dev theme terms** — neither theme page states a licence; confirm if certainty is needed.
 5. **Unreachable company sites** — review the 11 links above.
-6. **Logo** — confirm the company may reuse the American Elite Digital artwork, and ask its designer for a vector version with "ENTERPRISES" for print (the current files are web quality only).
+6. **Logos** — 6 companies have no logo yet (`docs/company-logos.md`): American Elite eCommerce, Business Star Makers, Global Business Solution, Entireopathic Medicine, Home Health Collaborative Alliance and American Elite Expert Professional Consultants. The businessstarmakers.com domain appears hijacked (its archived copy shows gambling spam). Optionally, a designer could redraw the crest as vector art for print.
 7. **Hosting** — a Node.js host is required. Nothing has been committed, pushed or deployed.

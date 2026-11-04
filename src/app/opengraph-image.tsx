@@ -8,8 +8,8 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
-  const lion = await readFile(join(process.cwd(), "public/brand/american-elite-emblem.png"));
-  const lionSrc = `data:image/png;base64,${lion.toString("base64")}`;
+  const crest = await readFile(join(process.cwd(), "public/brand/american-elite-crest.png"));
+  const crestSrc = `data:image/png;base64,${crest.toString("base64")}`;
 
   return new ImageResponse(
     (
@@ -58,7 +58,7 @@ export default async function Image() {
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse needs a plain img */}
-            <img src={lionSrc} width={210} height={210} alt="" />
+            <img src={crestSrc} width={236} height={233} alt="" />
           </div>
         </div>
       </div>

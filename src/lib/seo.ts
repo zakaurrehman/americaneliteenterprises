@@ -44,7 +44,7 @@ export function organizationJsonLd() {
         name: site.name,
         alternateName: site.shortName,
         url: site.url,
-        logo: `${site.url}/brand/american-elite-logo.png`,
+        logo: `${site.url}/brand/american-elite-crest.png`,
         description: site.description,
         foundingDate: String(site.foundedYear),
         telephone: "+1-310-766-6600",

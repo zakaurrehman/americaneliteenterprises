@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono, Sora } from "next/font/google";
+import { Cinzel, Inter, JetBrains_Mono, Sora } from "next/font/google";
 import { Effects } from "@/components/motion/Effects";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -17,6 +17,12 @@ const sora = Sora({
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+// Classical Roman capitals for the group name beside the crest.
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
   subsets: ["latin"],
 });
 
@@ -58,7 +64,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${inter.variable} ${jetbrains.variable}`}
+      className={`${sora.variable} ${inter.variable} ${cinzel.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
       <head>

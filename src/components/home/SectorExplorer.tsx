@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, m } from "motion/react";
 import { useRef, useState } from "react";
 import { companiesIn, sectorHref, sectors } from "@/content/portfolio";
+import { CompanyLogo } from "@/components/companies/CompanyLogo";
 import { ArrowRight, ArrowUpRight } from "@/components/ui/icons";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -142,17 +143,19 @@ export function SectorExplorer() {
             <ul className="mt-8 flex flex-wrap gap-2">
               {list.map((company) => {
                 const cls =
-                  "group inline-flex min-h-10 items-center gap-2 rounded-full border border-line bg-page/60 px-4 text-sm text-fg/90 transition-colors hover:border-accent/60 hover:text-fg";
+                  "group inline-flex min-h-12 items-center gap-2.5 rounded-xl border border-line bg-page/60 py-1.5 pl-1.5 pr-4 text-sm text-fg/90 transition-colors hover:border-accent/60 hover:text-fg";
                 return (
                   <li key={company.name}>
                     {company.profile ? (
                       <Link href={company.profile} className={cls}>
+                        <CompanyLogo name={company.name} size="md" highlight />
                         <span className="size-1.5 rounded-full bg-accent" aria-hidden />
                         {company.name}
                         <ArrowRight width={14} height={14} className="arrow-nudge text-fg-subtle group-hover:text-accent" />
                       </Link>
                     ) : (
                       <a href={company.sites[0].url} target="_blank" rel="noopener noreferrer" className={cls}>
+                        <CompanyLogo name={company.name} size="md" />
                         {company.name}
                         <ArrowUpRight width={14} height={14} className="arrow-nudge-diag text-fg-subtle group-hover:text-accent" />
                         <span className="sr-only"> (opens in a new tab)</span>

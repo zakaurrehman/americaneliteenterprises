@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { companiesIn, sectorHref, sectors, totalCompanies } from "@/content/portfolio";
+import { CompanyLogo } from "@/components/companies/CompanyLogo";
 import { ArrowRight, ArrowUpRight } from "@/components/ui/icons";
 
 /**
@@ -72,17 +73,19 @@ export function MegaMenu({ id, onNavigate }: { id: string; onNavigate: () => voi
                   <ul className="mt-3 grid grid-cols-2 gap-x-6">
                     {list.map((company) => {
                       const linkClass =
-                        "group flex items-center justify-between gap-3 rounded-lg px-2 py-2.5 text-[0.9rem] text-fg/85 transition-colors hover:bg-tint hover:text-fg";
+                        "group flex items-center gap-3 rounded-lg px-2 py-2 text-[0.9rem] text-fg/85 transition-colors hover:bg-tint hover:text-fg";
                       return (
                         <li key={company.name}>
                           {company.profile ? (
                             <Link href={company.profile} onClick={onNavigate} className={linkClass}>
-                              <span className="truncate">{company.name}</span>
+                              <CompanyLogo name={company.name} size="sm" highlight />
+                              <span className="mr-auto truncate">{company.name}</span>
                               <ArrowRight width={14} height={14} className="arrow-nudge shrink-0 text-fg-subtle group-hover:text-accent" />
                             </Link>
                           ) : (
                             <a href={company.sites[0].url} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                              <span className="truncate">{company.name}</span>
+                              <CompanyLogo name={company.name} size="sm" />
+                              <span className="mr-auto truncate">{company.name}</span>
                               <ArrowUpRight width={14} height={14} className="arrow-nudge-diag shrink-0 text-fg-subtle group-hover:text-accent" />
                               <span className="sr-only"> (opens in a new tab)</span>
                             </a>

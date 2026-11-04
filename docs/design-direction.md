@@ -34,13 +34,13 @@ The tokens were read from the themes' live previews (light and dark) and applied
 
 ## Light theme — final
 
-The original brief asked for "dark-mode-first", so the site was first built in the themes' dark mode. The client then asked for a **light theme**, and the site now uses the themes' **light mode**: near-white page and white surfaces, deep-navy text, Cyber Cyan's **blue primary** (`#2463ea`) with its teal secondary, and Twitter Azure's azure in gradients and glows. In light mode the hues that are too pale for text (azure, teal) are decorative only, with darker text-safe versions provided. The metallic logo (gold lion, red "ENTERPRISES") is the one warm note on the page.
+The original brief asked for "dark-mode-first", so the site was first built in the themes' dark mode. The client then asked for a **light theme**, and the site now uses the themes' **light mode**: near-white page and white surfaces, deep-navy text, Cyber Cyan's **blue primary** (`#2463ea`) with its teal secondary, and Twitter Azure's azure in gradients and glows. In light mode the hues that are too pale for text (azure, teal) are decorative only, with darker text-safe versions provided. The gold crest is the one warm note on the page.
 
 To make the switch clean, every component was moved to semantic tokens (`page`, `surface`, `line`, `tint`, `fg`, `accent`, `on-accent` …), so a future dark mode would be a token-only change.
 
 ## Signature: the Orbit
 
-The hero centrepiece is a lightweight 2D canvas: nine tilted elliptical orbits — one per sector — around the emblem, with each of the 45 businesses as a particle on its sector's orbit (inner orbits faster; the eight core entities highlighted). When idle it lights each sector in turn and names it; on desktop the nearest orbit lights up under the pointer and the plane tilts slightly. It expresses the group in one image — many businesses, one centre — and uses only real counts.
+The hero centrepiece is a lightweight 2D canvas: nine tilted elliptical orbits — one per sector — around the crest, with each of the 45 businesses as a particle on its sector's orbit (inner orbits faster; the eight core entities highlighted). When idle it lights each sector in turn and names it; on desktop the nearest orbit lights up under the pointer and the plane tilts slightly. It expresses the group in one image — many businesses, one centre — and uses only real counts.
 
 It is decorative (`aria-hidden`); the **sector explorer** below is the accessible way to explore the same data.
 
@@ -49,4 +49,4 @@ It is decorative (`aria-hidden`); the **sector explorer** below is the accessibl
 - **Headline:** "45 businesses. 9 sectors. One group." — real counts, three beats, short enough to stay on three lines beside the orbit. The `<h1>` also carries "American Elite Enterprises" for screen readers and search.
 - **Homepage directory → core entities.** The homepage shows the eight core group entities (server-rendered); the full filterable directory of all 45 lives on `/companies/`. This removed duplicated interactivity (the sector explorer already lists every company) and was the single biggest mobile-performance win.
 - **Glass without cost:** cards use translucent fills and hairline borders (no blur). Real backdrop blur is reserved for the floating header.
-- **Logo:** the metallic logo (`brand/logo-metallic`), the American Elite Digital artwork with "ENTERPRISES". It appears as the horizontal lockup in the header and footer, the emblem on About, in the orbit and in the Open Graph image, and the emblem favicons. It replaced the flat lion logo (`brand/logo`) at the client's request.
+- **Logos:** American Elite Enterprises keeps its original, traditional crest (header, footer, About, orbit, Open Graph, favicons), with the name in Cinzel capitals. Every business shows its **own logo**, so each keeps its identity and legacy (client request, 4 November 2026). The redesigned flat and metallic logos were set aside.

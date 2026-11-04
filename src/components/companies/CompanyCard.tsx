@@ -1,21 +1,7 @@
 import Link from "next/link";
 import { getSector, type Company } from "@/content/portfolio";
+import { CompanyLogo } from "@/components/companies/CompanyLogo";
 import { ArrowRight, ArrowUpRight } from "@/components/ui/icons";
-
-/** Initials used as a typographic identity where no verified logo exists. */
-export function monogram(name: string) {
-  const words = name
-    .replace(/^American Elite\s*(–\s*)?/i, "")
-    .replace(/[^A-Za-z0-9 ]/g, " ")
-    .split(/\s+/)
-    .filter(Boolean);
-  const source = words.length ? words : name.split(/\s+/);
-  return source
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase();
-}
 
 /**
  * Company card. Core entities link to their internal profile page; all others
@@ -38,14 +24,7 @@ export function CompanyCard({
   return (
     <article className="glass spotlight edge-light group relative flex h-full flex-col rounded-2xl p-6 transition-[background-color,transform] duration-500 ease-[var(--ease-expo)] hover:-translate-y-0.5 hover:bg-tint-strong">
       <div className="flex items-start justify-between gap-4">
-        <span
-          aria-hidden
-          className={`flex size-11 shrink-0 items-center justify-center rounded-xl border font-display text-sm font-semibold tracking-wide ${
-            internal ? "border-accent/40 bg-accent/10 text-accent" : "border-line bg-tint text-fg-muted"
-          }`}
-        >
-          {monogram(company.name)}
-        </span>
+        <CompanyLogo name={company.name} highlight={internal} />
         {showSector && <span className="label-mono text-[0.62rem] text-fg-subtle">{sectorName}</span>}
       </div>
 

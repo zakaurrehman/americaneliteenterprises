@@ -14,15 +14,22 @@ type Props = {
    * - `typographic`: grid + light only (directory, industries, contact)
    */
   variant?: "split" | "cinematic" | "typographic";
+  /** Shown above the eyebrow — e.g. a company's own logo on its profile page. */
+  mark?: ReactNode;
   children?: ReactNode;
 };
 
 /** Inner-page hero in three compositions sharing one atmosphere. */
-export function PageHero({ eyebrow, title, lead, crumbs, image, variant = "typographic", children }: Props) {
+export function PageHero({ eyebrow, title, lead, crumbs, image, variant = "typographic", mark, children }: Props) {
   const heading = (
     <>
+      {mark && (
+        <div className="enter-fade-up mt-8" style={{ "--enter-delay": "0.05s" } as React.CSSProperties}>
+          {mark}
+        </div>
+      )}
       <p
-        className="enter-fade-up glass label-mono mt-8 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[0.68rem] text-fg-muted"
+        className={`enter-fade-up glass label-mono ${mark ? "mt-6" : "mt-8"} inline-flex items-center gap-2 rounded-full px-3 py-1 text-[0.68rem] text-fg-muted`}
         style={{ "--enter-delay": "0.1s" } as React.CSSProperties}
       >
         <span className="size-1.5 rounded-full bg-accent" aria-hidden />

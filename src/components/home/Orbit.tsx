@@ -13,7 +13,7 @@ const TILT = 0.52; // ellipse squash — the orbit plane seen from above
 const ROT = (-14 * Math.PI) / 180; // plane rotation
 
 /**
- * Hero visual: the nine sectors as orbits around the emblem, with each of
+ * Hero visual: the nine sectors as orbits around the crest, with each of
  * the 45 businesses as a particle on its sector's orbit. Idle: sectors light
  * up in turn. Pointer: the nearest orbit lights up and the plane tilts.
  * Decorative (aria-hidden) — the sector explorer below is the accessible path.
@@ -32,7 +32,7 @@ export function Orbit() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const fine = window.matchMedia("(pointer: fine)").matches;
     const logo = new Image();
-    logo.src = "/brand/american-elite-emblem-sm.webp";
+    logo.src = "/brand/american-elite-crest-sm.webp";
 
     // Phones and touch devices: lower resolution and 30fps keep it cheap.
     const light = !fine || window.innerWidth < 768;
@@ -168,7 +168,7 @@ export function Orbit() {
       };
       back.forEach(dot);
 
-      // Core: soft halo + the emblem
+      // Core: soft halo + the crest
       ctx!.drawImage(halo, cx - halo.width / 2, cy - halo.height / 2);
       if (logo.complete && logo.naturalWidth) {
         const s = R * 0.4;
