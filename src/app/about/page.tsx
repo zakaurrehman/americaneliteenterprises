@@ -166,7 +166,7 @@ export default function AboutPage() {
               src={crest}
               alt="The American Elite Enterprises crest: a jewelled gold crown above an ornate gold frame enclosing a gold lion in a laurel wreath, an American flag ribbon and the words American Elite Enterprises"
               sizes="(min-width: 1024px) 30vw, 320px"
-              className="h-auto w-full drop-shadow-[0_0_60px_rgb(36_99_234/0.18)]"
+              className="h-auto w-full drop-shadow-[0_0_60px_rgb(28_53_112/0.18)]"
             />
           </div>
           <div className="lg:col-span-7 lg:col-start-6">

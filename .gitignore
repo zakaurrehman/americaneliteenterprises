@@ -46,3 +46,8 @@ next-env.d.ts
 
 # allow the documented env template
 !.env.example
+
+# Original-website image archive (61.5 MB) — kept locally; the site uses
+# copies in public/images/heritage/. See brand/original-site/README.md.
+/brand/original-site/*
+!/brand/original-site/README.md

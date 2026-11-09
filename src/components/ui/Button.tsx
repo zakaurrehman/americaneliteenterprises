@@ -2,12 +2,15 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowRight, ArrowUpRight } from "./icons";
 
-type Variant = "primary" | "glass" | "solid";
+type Variant = "primary" | "glass" | "solid" | "gold" | "outline-light";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-accent text-on-accent hover:bg-accent-deep shadow-[0_0_0_1px_rgb(36_99_234/0.4),0_10px_40px_-10px_rgb(36_99_234/0.55)] sheen",
+  primary: "bg-accent text-on-accent hover:bg-accent-deep shadow-[0_0_0_1px_rgb(28_53_112/0.4),0_10px_40px_-10px_rgb(28_53_112/0.55)] sheen",
   glass: "glass text-fg hover:border-line-strong hover:bg-tint-strong",
   solid: "bg-fg text-on-accent hover:bg-accent-deep",
+  // For dark backgrounds (photo hero, navy bands).
+  gold: "bg-gold text-navy-deep hover:bg-gold-soft shadow-[0_0_0_1px_rgb(201_162_74/0.5),0_12px_40px_-12px_rgb(201_162_74/0.6)] sheen",
+  "outline-light": "border border-white/45 bg-white/5 text-on-accent backdrop-blur-sm hover:border-gold hover:bg-white/10",
 };
 
 type Props = {

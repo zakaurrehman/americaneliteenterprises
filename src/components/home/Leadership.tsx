@@ -9,7 +9,7 @@ export function Leadership() {
       <div
         aria-hidden
         className="pointer-events-none absolute -left-40 top-[12rem] size-[44rem] rounded-full"
-        style={{ background: "radial-gradient(closest-side, rgb(29 157 241 / 0.12), transparent 70%)" }}
+        style={{ background: "radial-gradient(closest-side, rgb(28 53 112 / 0.12), transparent 70%)" }}
       />
       <div className="container-x relative grid items-center gap-14 lg:grid-cols-12 lg:gap-20">
         <div data-reveal="scale" className="relative mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none">
@@ -29,7 +29,7 @@ export function Leadership() {
           </div>
           <div
             aria-hidden
-            className="absolute -inset-px -z-10 rounded-[2rem] bg-gradient-to-br from-accent/40 via-transparent to-azure/30 blur-xl"
+            className="absolute -inset-px -z-10 rounded-[2rem] bg-gradient-to-br from-accent/40 via-transparent to-gold/30 blur-xl"
           />
         </div>
 

@@ -53,7 +53,7 @@ export function IndustryCard({
         </span>
       </div>
 
-      <h3 className={`font-display font-semibold tracking-[-0.03em] ${feature ? "text-3xl sm:text-4xl" : "text-xl sm:text-2xl"}`}>
+      <h3 className={`font-display font-semibold tracking-[-0.01em] ${feature ? "text-3xl sm:text-4xl" : "text-xl sm:text-2xl"}`}>
         {sector.name}
       </h3>
       <p className={`mt-3 text-fg-muted text-pretty ${feature ? "max-w-md text-base sm:text-lg" : "max-w-sm text-[0.95rem]"}`}>

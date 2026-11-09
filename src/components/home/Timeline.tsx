@@ -25,7 +25,7 @@ export function Timeline() {
       />
       <m.span
         aria-hidden
-        className="absolute bottom-0 left-[11px] top-0 w-px origin-top bg-gradient-to-b from-accent-soft via-accent to-accent-deep shadow-[0_0_14px_rgb(36_99_234/0.7)] md:left-[calc(50%-0.5px)]"
+        className="absolute bottom-0 left-[11px] top-0 w-px origin-top bg-gradient-to-b from-accent-soft via-accent to-accent-deep shadow-[0_0_14px_rgb(28_53_112/0.7)] md:left-[calc(50%-0.5px)]"
         style={{ scaleY: reduce ? 1 : progress }}
       />
 
@@ -40,7 +40,7 @@ export function Timeline() {
               aria-hidden
               className="absolute left-0 top-7 flex size-[23px] items-center justify-center rounded-full border border-accent/50 bg-page md:left-1/2 md:-translate-x-1/2"
             >
-              <span className="size-[7px] rounded-full bg-accent shadow-[0_0_10px_2px_rgb(36_99_234/0.6)]" />
+              <span className="size-[7px] rounded-full bg-accent shadow-[0_0_10px_2px_rgb(28_53_112/0.6)]" />
             </span>
 
             <div

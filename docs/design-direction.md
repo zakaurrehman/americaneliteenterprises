@@ -1,5 +1,24 @@
 # Design direction
 
+## American heritage — current direction (November 2026)
+
+After reviewing the site, Dr. Daniel Davidson asked for it to stay modern without losing American Elite's identity. He named five things to keep:
+- **The crown:** the head of the entire business ecosystem.
+- **American identity:** the flag, the stars, gold and patriotic elements.
+- **Lion Pride Leadership:** the lion stands for strength, leadership and excellence.
+- **His personal story:** from immigrating to America as a teenager to becoming a doctor and choosing service over money.
+- **The original website:** it tells his story through photographs and cinematic slideshows, and must not be lost.
+
+The layout, performance work, accessibility and every route stayed. What changed, in phase 1:
+- **Look:** navy, ivory and gold, with flag red as a rare accent, instead of the blue tech scheme. Playfair Display headlines, Cinzel capitals for labels and the group name, faint gold star fields, and flag-stripe and gold-hairline dividers. See [design-system.md](design-system.md).
+- **Hero:** the original website's homepage slideshow is back, using its six largest photos in its original order. They cross-fade slowly with a gentle zoom under a navy wash, with the original crest beside the headline "45 businesses. 9 sectors. One *crown.*" A pause button meets WCAG 2.2.2. With reduced motion the first photo is shown still, and the other photos load only after the page has loaded.
+- **"The American Elite crest" section:** a deep-navy band directly after the hero. The orbit now sits here, showing the crown at the head of all 45 businesses, beside the three symbols in Dr. Davidson's own meanings: the crown, the lion, and the flag and stars.
+- **Logos:** the original crest for the group, and each company's own logo (see [company-logos.md](company-logos.md)).
+
+Still to do:
+- **Phase 2**, which needs his story text and photos: a chapter-by-chapter founder story page and a Lion Pride Leadership values section.
+- **Phase 3**, which needs hosting access: clean up the original WordPress site and keep it live at its own address.
+
 ## Brief
 
 A futuristic, premium, dark-mode-first website that makes a client or reviewer say "impressive" within five seconds — award-level quality, not a template — while keeping the brand logo, the real content, every route and every redirect, and inventing nothing.
@@ -32,15 +51,15 @@ After the build started, the colour scheme was switched at the client's request 
 
 The tokens were read from the themes' live previews (light and dark) and applied as their exact oklch values; see [design-system.md](design-system.md). The themes' fonts ("General Sans") and radii were not adopted — the request was for the colour scheme — so Sora/Inter/JetBrains Mono and the existing radius scale remain.
 
-## Light theme — final
+## Light theme (superseded by the heritage direction above)
 
 The original brief asked for "dark-mode-first", so the site was first built in the themes' dark mode. The client then asked for a **light theme**, and the site now uses the themes' **light mode**: near-white page and white surfaces, deep-navy text, Cyber Cyan's **blue primary** (`#2463ea`) with its teal secondary, and Twitter Azure's azure in gradients and glows. In light mode the hues that are too pale for text (azure, teal) are decorative only, with darker text-safe versions provided. The gold crest is the one warm note on the page.
 
 To make the switch clean, every component was moved to semantic tokens (`page`, `surface`, `line`, `tint`, `fg`, `accent`, `on-accent` …), so a future dark mode would be a token-only change.
 
-## Signature: the Orbit
+## Signature: the Orbit (now in the crest section)
 
-The hero centrepiece is a lightweight 2D canvas: nine tilted elliptical orbits — one per sector — around the crest, with each of the 45 businesses as a particle on its sector's orbit (inner orbits faster; the eight core entities highlighted). When idle it lights each sector in turn and names it; on desktop the nearest orbit lights up under the pointer and the plane tilts slightly. It expresses the group in one image — many businesses, one centre — and uses only real counts.
+At first the hero centrepiece, now the visual of the crest section on navy (gold orbits, ivory businesses), it is a lightweight 2D canvas: nine tilted elliptical orbits — one per sector — around the crest, with each of the 45 businesses as a particle on its sector's orbit (inner orbits faster; the eight core entities highlighted). When idle it lights each sector in turn and names it; on desktop the nearest orbit lights up under the pointer and the plane tilts slightly. It expresses the group in one image — many businesses, one centre — and uses only real counts.
 
 It is decorative (`aria-hidden`); the **sector explorer** below is the accessible way to explore the same data.
 

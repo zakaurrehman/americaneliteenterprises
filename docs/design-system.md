@@ -4,64 +4,59 @@ All tokens live in [`src/app/globals.css`](../src/app/globals.css) as a Tailwind
 
 ## Colour
 
-**Light theme.** Source: the **light mode** of 21st.dev **Cyber Cyan Remix** (surfaces, text, blue primary, teal secondary, cyan tint) plus the azure primary of 21st.dev **Twitter Azure**. Values are the themes' own oklch tokens; only the two grey text tokens were darkened slightly so they pass WCAG AA on every surface.
+**"American heritage" light theme.** Navy, ivory and gold, with flag red as a rare accent: the colours of the group's crest and the American flag. It was chosen after Dr. Daniel Davidson asked that the site keep American Elite's American identity, luxury branding and traditional look (November 2026). It replaced the earlier blue scheme based on 21st.dev's Cyber Cyan Remix and Twitter Azure themes.
 
-| Token | oklch | ≈ hex | Theme source | Use |
-| --- | --- | --- | --- | --- |
-| `page` | 0.984 0.003 247.9 | `#f8fafc` | background | Page background |
-| `page-alt` | 0.968 0.007 247.9 | `#f1f5f9` | muted | Alternate sections |
-| `surface` / `surface-raised` | 1 0 0 | `#ffffff` | card / popover | Cards, menus, inputs |
-| `tint` / `tint-strong` | 0.968 0.007 247.9 / 0.945 0.012 250 | `#f1f5f9` / `#e8eef5` | muted | Hover fills |
-| `line` / `line-strong` | 0.929 0.013 255.5 / 0.871 0.005 286.3 | `#e2e8f0` / `#d4d4d8` | border / input | Borders, dividers |
-| `fg` | 0.206 0.039 265.5 | `#0f1729` | foreground | Primary text |
-| `fg-muted` | 0.47 0.04 257 | `#4b5a70` | muted-foreground, darkened | Secondary text |
-| `fg-subtle` | 0.52 0.04 257 | `#5a6a80` | muted-foreground, darkened | Labels, metadata |
-| `accent` | 0.545 0.215 262.7 | `#2463ea` | primary (blue) | Buttons, links, highlights |
-| `accent-deep` | 0.39 0.163 262.7 | `#0e3b9a` | accent-foreground | Hover states, gradient start |
-| `accent-soft` | 0.70 0.15 255 | `#59a0f9` | (tint of primary) | Gradients and glows only |
-| `on-accent` | 0.984 0.003 247.9 | `#f8fafc` | primary-foreground | Text on accent and dark fills |
-| `azure` / `azure-text` | 0.672 0.161 245 / 0.55 0.16 245 | `#1d9df1` / `#0077c7` | Twitter Azure primary | Decoration / text-safe azure |
-| `teal` / `teal-text` | 0.673 0.133 166.3 / 0.50 0.11 185 | `#1eaf84` / `#00776b` | Cyber Cyan secondary | Decoration / text-safe teal |
-| `cyan-tint` | 0.974 0.021 176 | `#e9fbf6` | accent | Reserved accent surface |
-| `danger` | 0.52 0.19 27 | `#be2323` | destructive, darkened for text | Form errors |
+| Token | Hex | Use |
+| --- | --- | --- |
+| `page` | `#fbf8f2` | Page background (ivory) |
+| `page-alt` | `#f4eee2` | Alternate sections (parchment) |
+| `surface` / `surface-raised` | `#ffffff` | Cards, menus, inputs |
+| `tint` / `tint-strong` | `#f3ecdd` / `#ece2cc` | Hover fills |
+| `line` / `line-strong` | `#e6dcc8` / `#d3c4a6` | Borders, dividers |
+| `fg` | `#0e1a36` | Primary text (navy ink) |
+| `fg-muted` | `#4a5165` | Secondary text |
+| `fg-subtle` | `#5b6274` | Labels, metadata |
+| `accent` | `#1c3570` | Royal navy: buttons, links, highlights |
+| `accent-deep` | `#11234d` | Hover states |
+| `accent-soft` | `#8aa0d0` | Gradients and glows only |
+| `on-accent` | `#fbf8f2` | Text on navy |
+| `navy-deep` | `#0b1630` | Dark bands (crest section), photo overlays |
+| `gold` / `gold-soft` | `#c9a24a` / `#e6cf94` | Decoration on light; text and buttons on navy |
+| `gold-text` | `#7a5a14` | Gold for text on light surfaces |
+| `crimson` / `crimson-text` | `#b22234` / `#9b1d2e` | Flag red: decoration / text-safe |
+| `danger` | `#a3231b` | Form errors |
 
-### Contrast (WCAG 2.2 AA) — computed from the oklch values
+### Contrast (WCAG 2.2 AA)
 
 | Pair | Ratio |
 | --- | --- |
-| `fg` on `page` / `surface` | 17.11 / 17.92 ✓ |
-| `fg-subtle` on `page-alt` (the hardest case) | 5.02 ✓ |
-| `accent` on `page` / `surface` | 4.96 / 5.19 ✓ |
-| `on-accent` on `accent` (buttons) | 4.96 ✓ |
-| `accent-deep` on `page` | 9.53 ✓ |
-| `azure-text` / `teal-text` on `page` | 4.51 / 5.24 ✓ |
-| `danger` on `surface` | 6.08 ✓ |
+| `fg` on `page` / `surface` | 16.24 / 17.22 ✓ |
+| `fg-muted` on `tint` (its hardest case) | 6.72 ✓ |
+| `fg-subtle` on `tint` (the hardest text case) | 5.18 ✓ |
+| `accent` on `page`; `on-accent` on `accent` (buttons) | 11.05 ✓ |
+| `gold-text` on `page` / `tint` | 6.00 / 5.41 ✓ |
+| `crimson-text` on `page` | 7.59 ✓ |
+| `danger` on `surface` | 7.46 ✓ |
+| `gold` / `gold-soft` on `navy-deep` | 7.47 / 11.71 ✓ |
+| `navy-deep` text on the gold button | 7.47 ✓ |
+| Ivory at 75% on `navy-deep` | 9.84 ✓ |
 
-Not text-safe, so used only decoratively: `azure` (2.81), `teal` (2.66) and `accent-soft`. The theme's original muted grey (`#64748b`) is 4.33:1 on `page-alt`, which is why it was darkened. Headline gradients run deep blue → blue → text-safe azure, so every stop passes. The scroll-lit statement rests at 60% opacity (4.63:1). axe reports no contrast violations on any page.
+`gold` and `crimson` are not text-safe on light surfaces, so they are used there only as decoration. Headline gradients run royal navy → antique gold (`#8a6417`, 5.06:1 on `page`), so every stop passes. The scroll-lit statement rests at 72% opacity (6.72:1). It was 60% (4.48:1), which failed at phone text size. The hero's text sits on a navy wash of 80–94% over the photos, so it stays legible on every slide. axe reports no contrast violations on any page.
 
-### Dark mode (not active)
-
-The site was first built in the themes' dark mode. If a dark mode is wanted later, these are the values used then (Cyber Cyan Remix dark + Twitter Azure); because every component uses semantic tokens, it is a token-only change plus a toggle:
-
-| Token | Dark value |
-| --- | --- |
-| `page` / `page-alt` / `surface` / `surface-raised` | oklch(0.131 0.025 249.2) / (0.143 0.02 258) / (0.156 0.015 272.2) / (0.206 0.039 265.5) |
-| `fg` / `fg-muted` / `fg-subtle` | oklch(0.959 0.027 208.3) / (0.711 0.035 256.8) / (0.64 0.035 256) |
-| `accent` / `on-accent` | oklch(0.861 0.136 193.8) cyan / oklch(0.131 0.025 249.2) |
-| `azure` | oklch(0.669 0.161 245) |
-| `line` / `tint` | white at 8–10% / white at 3–6% |
+The flag stripe (`flag-rule`) and gold hairline (`gold-rule`) utilities are used as dividers: below the hero and at the top of the footer. The faint field of small gold stars (`tech-grid`, a historical name) sits behind page heroes and the crest section.
 
 ## Typography
 
 | Role | Font | Notes |
 | --- | --- | --- |
-| Display | **Sora** (variable) | 600, tracking −0.03 to −0.045em, leading ~1.0 |
+| Display | **Playfair Display** (variable, roman and italic) | Classical high-contrast serif; 600, tracking −0.01 to −0.015em. Italic gold for emphasis (for example "One *crown.*") |
+| Labels, eyebrows, group name | **Cinzel** (variable) | Roman capitals like the crest's lettering; `label-mono` (the name is historical), 0.16em tracking |
 | Body / UI | **Inter** (variable) | 16–18px, line-height 1.6–1.75 |
-| Labels / data | **JetBrains Mono** (variable) | Uppercase, 0.14em tracking, for eyebrows, counts, metadata |
+| URLs, counters | **JetBrains Mono** (variable) | Small amounts only |
 
-Self-hosted via `next/font`; one variable file per family (three font files in total).
+All are self-hosted via `next/font`.
 
-Scale utilities: `display-hero` (clamp 2.4→4.75rem), `display-lg` (1.9→3.25rem), `display-md` (1.5→2rem), statement paragraphs (1.4→2.25rem), `label-mono` (0.75rem mono caps). Accent emphasis in headlines uses `text-accent-gradient` (soft cyan → cyan → azure).
+Scale utilities: `display-hero` (clamp 2.4→4.75rem), `display-lg` (1.9→3.25rem), `display-md` (1.5→2rem), statement paragraphs (1.4→2.25rem), `label-mono` (0.75rem small capitals).
 
 ## Surfaces
 

@@ -36,7 +36,7 @@ export function Philosophy() {
           <blockquote
             data-reveal
             style={{ "--reveal-delay": 1 } as React.CSSProperties}
-            className="font-display text-[clamp(1.4rem,2.6vw,2.25rem)] font-medium leading-[1.25] tracking-[-0.035em] text-fg"
+            className="font-display text-[clamp(1.4rem,2.6vw,2.25rem)] font-medium leading-[1.25] tracking-[-0.01em] text-fg"
           >
             “{founder.quote}”
           </blockquote>

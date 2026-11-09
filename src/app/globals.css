@@ -1,37 +1,36 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   American Elite — design tokens (light theme)
-   Colour scheme: the light mode of 21st.dev "Cyber Cyan Remix" (surfaces,
-   text, blue primary, teal secondary, cyan tint), with the azure of
-   21st.dev "Twitter Azure". Values are the themes' own oklch tokens; the
-   two grey text tokens are slightly darker than the theme's for WCAG AA.
-   Contrast ratios are documented in docs/design-system.md.
+   American Elite — design tokens ("American heritage" light theme)
+   Navy, ivory and gold, with American red as a rare accent: the colours of
+   the group's crest and flag. Text tokens meet WCAG AA on every surface;
+   contrast ratios are documented in docs/design-system.md.
 ------------------------------------------------------------------ */
 @theme {
-  --color-page: oklch(0.984 0.003 247.858); /* background #f8fafc */
-  --color-page-alt: oklch(0.968 0.007 247.895); /* muted — alternate sections */
-  --color-surface: oklch(1 0 0); /* card */
-  --color-surface-raised: oklch(1 0 0); /* popover */
-  --color-tint: oklch(0.968 0.007 247.895); /* hover fills */
-  --color-tint-strong: oklch(0.945 0.012 250);
-  --color-line: oklch(0.929 0.013 255.532); /* border #e2e8f0 */
-  --color-line-strong: oklch(0.871 0.005 286.285); /* input */
-  --color-fg: oklch(0.206 0.039 265.547); /* foreground — 17:1 */
-  --color-fg-muted: oklch(0.47 0.04 257); /* secondary text — AA on all surfaces */
-  --color-fg-subtle: oklch(0.52 0.04 257); /* tertiary text — 5:1 on page-alt */
-  --color-accent: oklch(0.545 0.215 262.741); /* primary blue — 5:1 */
-  --color-accent-soft: oklch(0.7 0.15 255); /* gradients and glows only */
-  --color-accent-deep: oklch(0.39 0.163 262.704); /* accent-foreground — 9.5:1 */
-  --color-on-accent: oklch(0.984 0.003 247.858); /* text on accent / dark fills */
-  --color-azure: oklch(0.672 0.161 245); /* Twitter Azure — decorative only */
-  --color-azure-text: oklch(0.55 0.16 245); /* azure for text — 4.5:1 */
-  --color-teal: oklch(0.673 0.133 166.273); /* Cyber Cyan secondary — decorative */
-  --color-teal-text: oklch(0.5 0.11 185); /* teal for text — 5.2:1 */
-  --color-cyan-tint: oklch(0.974 0.021 176.033); /* Cyber Cyan accent surface */
-  --color-danger: oklch(0.52 0.19 27); /* error text — 6:1 */
+  --color-page: #fbf8f2; /* ivory */
+  --color-page-alt: #f4eee2; /* parchment — alternate sections */
+  --color-surface: #ffffff; /* cards */
+  --color-surface-raised: #ffffff; /* menus, popovers */
+  --color-tint: #f3ecdd; /* hover fills */
+  --color-tint-strong: #ece2cc;
+  --color-line: #e6dcc8; /* hairlines */
+  --color-line-strong: #d3c4a6;
+  --color-fg: #0e1a36; /* navy ink — 14.6:1+ */
+  --color-fg-muted: #4a5165; /* secondary text — 6.7:1+ */
+  --color-fg-subtle: #5b6274; /* tertiary text — 5.2:1+ */
+  --color-accent: #1c3570; /* royal navy — 10:1+ */
+  --color-accent-soft: #8aa0d0; /* gradients and glows only */
+  --color-accent-deep: #11234d;
+  --color-on-accent: #fbf8f2; /* text on navy fills */
+  --color-navy-deep: #0b1630; /* dark bands and photo overlays */
+  --color-gold: #c9a24a; /* decorative gold; also text on navy (7:1) */
+  --color-gold-soft: #e6cf94;
+  --color-gold-text: #7a5a14; /* gold for text on light surfaces — 5.4:1+ */
+  --color-crimson: #b22234; /* flag red — decorative */
+  --color-crimson-text: #9b1d2e; /* red for text — 6.8:1+ */
+  --color-danger: #a3231b; /* error text — 6.3:1+ */
 
-  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
   --font-heritage: var(--font-cinzel), Georgia, "Times New Roman", serif;
@@ -90,11 +89,13 @@ body {
   padding-inline: var(--gutter);
 }
 
+/* Small-capital label (eyebrows, captions) in the crest's classical serif.
+   The utility keeps its historical name. */
 @utility label-mono {
-  font-family: var(--font-mono);
+  font-family: var(--font-heritage);
   font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
@@ -102,16 +103,16 @@ body {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(2.4rem, 5.2vw, 4.75rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
 }
 
 @utility display-lg {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(1.9rem, 3.6vw, 3.25rem);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
+  line-height: 1.08;
+  letter-spacing: -0.012em;
 }
 
 @utility display-md {
@@ -119,7 +120,7 @@ body {
   font-weight: 600;
   font-size: clamp(1.5rem, 2.4vw, 2rem);
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 
 @utility prose-editorial {
@@ -138,9 +139,9 @@ body {
   contain-intrinsic-size: auto 1000px;
 }
 
-/* Accent text: deep blue → blue → azure (every stop ≥ 4.5:1 on the page). */
+/* Accent text: royal navy → antique gold (every stop ≥ 4.5:1 on the page). */
 @utility text-accent-gradient {
-  background: linear-gradient(100deg, #0e3b9a 0%, #2463ea 50%, #0077c7 100%);
+  background: linear-gradient(100deg, #1c3570 0%, #2c4a8e 45%, #8a6417 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -151,26 +152,46 @@ body {
   background: linear-gradient(180deg, rgb(255 255 255 / 0.92), rgb(255 255 255 / 0.78));
   border: 1px solid var(--color-line);
   box-shadow:
-    0 1px 2px rgb(15 23 42 / 0.04),
-    0 8px 24px -12px rgb(15 23 42 / 0.10);
+    0 1px 2px rgb(14 26 54 / 0.04),
+    0 8px 24px -12px rgb(14 26 54 / 0.10);
 }
 
 /* Blurred glass, reserved for floating UI (header, menus). */
 @utility glass-blur {
   background: rgb(255 255 255 / 0.85);
   border: 1px solid var(--color-line);
-  box-shadow: 0 12px 40px -16px rgb(15 23 42 / 0.18);
+  box-shadow: 0 12px 40px -16px rgb(14 26 54 / 0.18);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
 }
 
-/* Faint technical grid used behind heroes. */
+/* Faint field of small gold stars behind heroes (the name is historical). */
 @utility tech-grid {
-  background-image:
-    linear-gradient(to right, rgb(15 23 42 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(15 23 42 / 0.05) 1px, transparent 1px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cpath d='M36 30l1.6 4.2 4.4.2-3.4 2.8 1.2 4.3-3.8-2.5-3.8 2.5 1.2-4.3-3.4-2.8 4.4-.2z' fill='%23b08d3e' fill-opacity='.18'/%3E%3C/svg%3E");
   background-size: 72px 72px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+}
+
+/* Thin flag stripe — red, ivory, navy — used as a heritage divider. */
+@utility flag-rule {
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-crimson) 0 33.3%, #f4ecdc 33.3% 66.6%, var(--color-accent) 66.6% 100%);
+}
+
+/* Hairline that brightens to gold at the centre. */
+@utility gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* Hero slideshow: slow zoom while a slide is showing (Ken Burns). */
+@keyframes ken-burns {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.12);
+  }
 }
 
 /* ------------------------------------------------------------------
@@ -312,7 +333,7 @@ html.js [data-reveal].is-in {
   transition: opacity 0.4s var(--ease-soft);
   background: radial-gradient(
     420px circle at var(--mx) var(--my),
-    rgb(36 99 234 / 0.08),
+    rgb(201 162 74 / 0.10),
     transparent 45%
   );
 }
@@ -332,7 +353,7 @@ html.js [data-reveal].is-in {
   padding: 1px;
   background: radial-gradient(
     260px circle at var(--mx, 50%) var(--my, 50%),
-    rgb(36 99 234 / 0.55),
+    rgb(201 162 74 / 0.7),
     transparent 60%
   );
   -webkit-mask:
@@ -393,7 +414,7 @@ html.js [data-reveal].is-in {
 
 /* Scroll-lit statement: each word's opacity follows --p (0→1). */
 .lit-word {
-  opacity: clamp(0.6, calc(var(--p, 1) * var(--n) - var(--i) + 1), 1);
+  opacity: clamp(0.72, calc(var(--p, 1) * var(--n) - var(--i) + 1), 1);
   transition: opacity 0.2s linear;
 }
 

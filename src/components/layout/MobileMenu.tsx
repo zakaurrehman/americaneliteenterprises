@@ -216,7 +216,7 @@ export function MobileMenu({ onClose }: { onClose: () => void }) {
 }
 
 const rowLink =
-  "flex min-h-16 items-center justify-between font-display text-2xl font-semibold tracking-[-0.03em] text-fg hover:text-accent";
+  "flex min-h-16 items-center justify-between font-display text-2xl font-semibold tracking-[-0.01em] text-fg hover:text-accent";
 
 const rowVariants = {
   hidden: { opacity: 0, y: 16 },

@@ -1,6 +1,6 @@
 # Company logos
 
-Each business keeps its own logo and identity on the website, at the client's request. The logos were taken as published on each company's own website (November 2026) and are shown unchanged, on a white tile, in:
+Each business keeps its own logo and identity on the website, at the client's request. The logos were taken as published on each company's own website (November 2026), or supplied by the client where none could be found online, and are shown unchanged, on a white tile, in:
 - the company directory and industry pages;
 - the sector explorer and mega menu;
 - the entity pages.
@@ -15,7 +15,7 @@ Notes:
 - Hospitals Without Walls uses one logo for all four of its domains.
 - Certify Service Animal's website shows the same seal as Register Service Animal, so both appear with that seal.
 
-## Logos and sources (39 of 45)
+## Logos from company websites (39)
 
 | Company | File | Source |
 | --- | --- | --- |
@@ -34,7 +34,7 @@ Notes:
 | American Elite Global Businesses | `american-elite-global-businesses` | https://americaneliteglobal.com/wp-content/uploads/2023/02/Davidson-copy-scaled.jpg |
 | American Elite Club | `american-elite-club` | https://americaneliteclub.com/wp-content/uploads/2023/02/2023-copy-5-2048x1252.jpg |
 | American Elite Executives | `american-elite-executives` | https://americaneliteexecutives.com/wp-content/uploads/2024/07/American-Elite-Administrators-Executives_.png (Wayback Machine) |
-| Global Star Makers | `global-star-makers` | https://globalstarmakers.com/wp-content/uploads/2024/05/WhatsApp-Image-2024-02-08-at-2.14.18-AM.jpeg |
+| Global Star Makers | `global-star-makers` | https://globalstarmakers.com/wp-content/uploads/2024/05/WhatsApp-Image-2024-02-08-at-2.14.18-AM.jpeg (now the client-supplied file, same artwork) |
 | American Elite Lenders | `american-elite-lenders` | https://americanelitelenders.com/wp-content/uploads/2024/07/American-Elite-Lenders.png (Wayback Machine) |
 | American Elite – TechArt Digital | `american-elite-techart-digital` | https://techartdigital.com/wp-content/uploads/2023/01/final-logo-copy-2048x1240.jpg |
 | American Elite Digital | `american-elite-digital` | https://www.americanelitedigital.com/_next/image/?url=%2F_next%2Fstatic%2Fimmutable%2Fmedia%2Flockup-horizontal.0-e8q6kiobgng.png&w=1920&q=75 |
@@ -59,15 +59,18 @@ Notes:
 | American Elite Training | `american-elite-training` | https://americanelitetraining.com/wp-content/uploads/2023/02/Training.jpg |
 | FflatProoff | `fflatprooff` | https://fflatprooff.com/wp-content/uploads/2024/05/Fflatprooff-Tire-Company-Logo.jpg |
 
-## Without a logo (6)
+## Supplied by the client (9 November 2026)
 
-These show the company's initials until a logo is supplied.
+These six could not be found online and were sent by the client. Global Star Makers was also sent; its file replaces the copy from its website (same artwork).
 
-| Company | Why |
-| --- | --- |
-| Entireopathic Medicine | Site blocks automated visits (403) and has no usable archived copy. |
-| Home Health Collaborative Alliance | Site blocks automated visits (403) and has no archived copy. |
-| Business Star Makers | Site returns an error; the archived copy shows gambling spam, so the domain appears hijacked. Nothing was taken from it. |
-| Global Business Solution | Domain does not resolve; the archived site shows no logo. |
-| American Elite Expert Professional Consultants | Has no site of its own: its link redirects to a page of American Elite Global Solutions, whose logo it would duplicate. |
-| American Elite eCommerce | Domain does not resolve; the archived copy (Wayback Machine) did not keep the logo image. |
+| Company | File | Why it was needed |
+| --- | --- | --- |
+| Entireopathic Medicine | `entireopathic-medicine` | Site blocks automated visits (403). |
+| Home Health Collaborative Alliance | `home-health-collaborative-alliance` | Site blocks automated visits (403). |
+| Business Star Makers | `business-star-makers` | Site returns an error, and the archived copy shows gambling spam (the domain appears hijacked). |
+| Global Business Solution | `global-business-solution` | Domain does not resolve. |
+| American Elite Expert Professional Consultants | `american-elite-expert-professional-consultants` | Has no site of its own. The client sent the American Elite Consultants artwork for it. |
+| American Elite eCommerce | `american-elite-ecommerce` | Domain does not resolve. |
+| Global Star Makers | `global-star-makers` | Not needed; sent with the others. |
+
+All 45 companies now show their own logo.

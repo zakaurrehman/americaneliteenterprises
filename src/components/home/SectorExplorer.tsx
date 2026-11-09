@@ -69,7 +69,7 @@ export function SectorExplorer() {
                   className="glass absolute inset-0 rounded-xl"
                   transition={{ type: "spring", stiffness: 380, damping: 34 }}
                 >
-                  <span className="absolute inset-y-3 left-0 hidden w-0.5 rounded-full bg-accent shadow-[0_0_12px_rgb(36_99_234/0.8)] lg:block" />
+                  <span className="absolute inset-y-3 left-0 hidden w-0.5 rounded-full bg-accent shadow-[0_0_12px_rgb(28_53_112/0.8)] lg:block" />
                 </m.span>
               )}
               <span className="relative flex items-baseline gap-3">
@@ -127,7 +127,7 @@ export function SectorExplorer() {
                 <p className="label-mono text-[0.68rem] text-accent">
                   Sector {String(active + 1).padStart(2, "0")} / {sectors.length}
                 </p>
-                <h3 className="mt-3 font-display text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
+                <h3 className="mt-3 font-display text-3xl font-semibold tracking-[-0.01em] sm:text-4xl">
                   {sector.name}
                 </h3>
               </div>

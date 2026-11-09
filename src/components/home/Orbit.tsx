@@ -13,8 +13,9 @@ const TILT = 0.52; // ellipse squash — the orbit plane seen from above
 const ROT = (-14 * Math.PI) / 180; // plane rotation
 
 /**
- * Hero visual: the nine sectors as orbits around the crest, with each of
- * the 45 businesses as a particle on its sector's orbit. Idle: sectors light
+ * The crown at the head of the ecosystem: the nine sectors as orbits around
+ * the crest, with each of the 45 businesses as a particle on its sector's
+ * orbit. Drawn for a navy background (gold orbits, ivory businesses). Idle: sectors light
  * up in turn. Pointer: the nearest orbit lights up and the plane tilts.
  * Decorative (aria-hidden) — the sector explorer below is the accessible path.
  */
@@ -54,8 +55,8 @@ export function Orbit() {
       const hctx = halo.getContext("2d");
       if (hctx) {
         const g = hctx.createRadialGradient(hr, hr, 0, hr, hr, hr);
-        g.addColorStop(0, "rgba(36,99,234,0.20)");
-        g.addColorStop(1, "rgba(36,99,234,0)");
+        g.addColorStop(0, "rgba(201,162,74,0.32)");
+        g.addColorStop(1, "rgba(201,162,74,0)");
         hctx.fillStyle = g;
         hctx.fillRect(0, 0, halo.width, halo.height);
       }
@@ -134,7 +135,7 @@ export function Orbit() {
         const g = glow[i];
         ctx!.beginPath();
         ctx!.ellipse(cx, cy, r, r * tilt, rot, 0, Math.PI * 2);
-        ctx!.strokeStyle = g > 0.02 ? `rgba(36,99,234,${0.08 + g * 0.55})` : "rgba(15,23,41,0.10)";
+        ctx!.strokeStyle = g > 0.02 ? `rgba(201,162,74,${0.18 + g * 0.6})` : "rgba(251,248,242,0.13)";
         ctx!.lineWidth = 1 + g * 0.6;
         ctx!.stroke();
       }
@@ -157,13 +158,13 @@ export function Orbit() {
         if (g > 0.05 || core) {
           ctx!.beginPath();
           ctx!.arc(x, y, size * 3.2, 0, Math.PI * 2);
-          ctx!.fillStyle = `rgba(36,99,234,${0.1 * Math.max(g, core * 0.6)})`;
+          ctx!.fillStyle = `rgba(201,162,74,${0.16 * Math.max(g, core * 0.6)})`;
           ctx!.fill();
         }
         ctx!.beginPath();
         ctx!.arc(x, y, size, 0, Math.PI * 2);
         const alpha = 0.35 + depth * 0.6;
-        ctx!.fillStyle = core || g > 0.5 ? `rgba(36,99,234,${alpha})` : `rgba(15,23,41,${alpha * (0.7 + g * 0.3)})`;
+        ctx!.fillStyle = core || g > 0.5 ? `rgba(222,190,110,${alpha})` : `rgba(251,248,242,${alpha * (0.75 + g * 0.25)})`;
         ctx!.fill();
       };
       back.forEach(dot);
@@ -171,7 +172,7 @@ export function Orbit() {
       // Core: soft halo + the crest
       ctx!.drawImage(halo, cx - halo.width / 2, cy - halo.height / 2);
       if (logo.complete && logo.naturalWidth) {
-        const s = R * 0.4;
+        const s = R * 0.46;
         ctx!.drawImage(logo, cx - s / 2 + px * 6, cy - s / 2 + py * 6, s, s);
       }
 
@@ -236,13 +237,13 @@ export function Orbit() {
     <div ref={wrapRef} aria-hidden className="relative aspect-square w-full">
       <canvas ref={canvasRef} className="absolute inset-0 size-full" />
       <div className="pointer-events-none absolute inset-x-0 bottom-[8%] flex justify-center">
-        <div className="flex items-center gap-3 rounded-full border border-line bg-surface/90 px-4 py-2 text-sm">
-          <span className="size-1.5 rounded-full bg-accent shadow-[0_0_12px_2px_rgb(36_99_234/0.6)]" />
-          <span className="font-mono text-[0.7rem] text-fg-subtle">{String(label + 1).padStart(2, "0")}</span>
-          <span key={label} className="font-medium text-fg [animation:fade-in_0.5s_ease_both]">
+        <div className="flex items-center gap-3 rounded-full border border-white/15 bg-navy-deep/85 px-4 py-2 text-sm text-on-accent">
+          <span className="size-1.5 rounded-full bg-gold shadow-[0_0_12px_2px_rgb(201_162_74/0.6)]" />
+          <span className="font-heritage text-[0.72rem] text-gold-soft">{String(label + 1).padStart(2, "0")}</span>
+          <span key={label} className="font-medium [animation:fade-in_0.5s_ease_both]">
             {ring.name}
           </span>
-          <span className="text-fg-muted">
+          <span className="text-on-accent/75">
             {ring.count} {ring.count === 1 ? "business" : "businesses"}
           </span>
         </div>

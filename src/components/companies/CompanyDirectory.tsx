@@ -63,7 +63,7 @@ export function CompanyDirectory({ searchable = false }: { searchable?: boolean 
                   {active && (
                     <m.span
                       layoutId="filter-pill"
-                      className="absolute inset-0 rounded-full bg-accent shadow-[0_0_24px_-4px_rgb(36_99_234/0.7)]"
+                      className="absolute inset-0 rounded-full bg-accent shadow-[0_0_24px_-4px_rgb(28_53_112/0.7)]"
                       transition={{ type: "spring", stiffness: 400, damping: 34 }}
                     />
                   )}

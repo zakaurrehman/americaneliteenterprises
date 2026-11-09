@@ -13,13 +13,13 @@ export function ContactCta({ index }: { index?: string }) {
             <div
               className="absolute -right-1/4 -top-[25rem] size-[50rem] rounded-full"
               style={{
-                background: "radial-gradient(closest-side, rgb(36 99 234 / 0.22), transparent 70%)",
+                background: "radial-gradient(closest-side, rgb(201 162 74 / 0.22), transparent 70%)",
                 animation: "glow-drift 18s ease-in-out infinite",
               }}
             />
             <div
               className="absolute -bottom-[22rem] -left-1/4 size-[44rem] rounded-full"
-              style={{ background: "radial-gradient(closest-side, rgb(29 157 241 / 0.16), transparent 70%)" }}
+              style={{ background: "radial-gradient(closest-side, rgb(28 53 112 / 0.16), transparent 70%)" }}
             />
           </div>
 

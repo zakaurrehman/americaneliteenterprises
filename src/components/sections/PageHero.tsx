@@ -62,13 +62,13 @@ export function PageHero({ eyebrow, title, lead, crumbs, image, variant = "typog
       <div
         className="absolute -right-[20%] -top-[30vh] h-[60vmax] w-[60vmax] rounded-full"
         style={{
-          background: "radial-gradient(closest-side, rgb(36 99 234 / 0.13), transparent 70%)",
+          background: "radial-gradient(closest-side, rgb(201 162 74 / 0.13), transparent 70%)",
           animation: "glow-drift 22s ease-in-out infinite",
         }}
       />
       <div
         className="absolute -left-[25%] top-[25vh] h-[50vmax] w-[50vmax] rounded-full"
-        style={{ background: "radial-gradient(closest-side, rgb(29 157 241 / 0.1), transparent 70%)" }}
+        style={{ background: "radial-gradient(closest-side, rgb(28 53 112 / 0.1), transparent 70%)" }}
       />
     </div>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CrestSection } from "@/components/home/CrestSection";
 import { Directory } from "@/components/home/Directory";
 import { Ecosystem } from "@/components/home/Ecosystem";
 import { Hero } from "@/components/home/Hero";
@@ -24,6 +25,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <CrestSection />
       <Introduction />
       <Ecosystem />
       <Directory />

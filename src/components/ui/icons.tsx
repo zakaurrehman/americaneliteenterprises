@@ -81,3 +81,28 @@ export function Search(props: IconProps) {
     </svg>
   );
 }
+
+export function Pause(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M8 5v14M16 5v14" strokeWidth={2.5} />
+    </svg>
+  );
+}
+
+export function Play(props: IconProps) {
+  return (
+    <svg {...base} fill="currentColor" stroke="none" {...props}>
+      <path d="M7 4.5v15a.6.6 0 0 0 .9.5l12-7.5a.6.6 0 0 0 0-1L7.9 4a.6.6 0 0 0-.9.5z" />
+    </svg>
+  );
+}
+
+/** Five-pointed star, filled — the flag's stars. */
+export function Star(props: IconProps) {
+  return (
+    <svg {...base} fill="currentColor" stroke="none" {...props}>
+      <path d="M12 2.5l2.8 6.1 6.7.7-5 4.5 1.4 6.6L12 17l-5.9 3.4 1.4-6.6-5-4.5 6.7-.7z" />
+    </svg>
+  );
+}

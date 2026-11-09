@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Inter, JetBrains_Mono, Sora } from "next/font/google";
+import { Cinzel, Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import { Effects } from "@/components/motion/Effects";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -10,9 +10,11 @@ import { organizationJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 // Variable fonts: one file per family covers every weight used.
-const sora = Sora({
-  variable: "--font-sora",
+// Classical high-contrast serif for headlines.
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 const inter = Inter({
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f8fafc",
+  themeColor: "#fbf8f2",
   colorScheme: "light",
 };
 
@@ -64,7 +66,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${inter.variable} ${cinzel.variable} ${jetbrains.variable}`}
+      className={`${playfair.variable} ${inter.variable} ${cinzel.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
       <head>

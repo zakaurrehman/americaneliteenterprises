@@ -78,7 +78,8 @@ export function SiteHeader() {
     };
   }, [megaOpen]);
 
-  const solid = scrolled || megaOpen;
+  // The homepage opens on dark photography, so its bar is solid from the start.
+  const solid = scrolled || megaOpen || pathname === "/";
   const navItems = mainNav.filter((item) => item.href !== "/");
 
   return (

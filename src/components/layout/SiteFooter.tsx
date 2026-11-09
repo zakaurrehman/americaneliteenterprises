@@ -15,10 +15,7 @@ async function CopyrightYear() {
 export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-line bg-page text-fg-muted">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-accent/50 to-transparent"
-      />
+      <div aria-hidden className="flag-rule absolute inset-x-0 top-0" />
       <div className="container-x pb-10 pt-20 lg:pt-24">
         <div className="grid gap-14 pb-14 lg:grid-cols-12">
           <div data-reveal className="lg:col-span-5">

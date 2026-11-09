@@ -55,12 +55,35 @@ The first build of the new design scored **54** on mobile (CLS 0.775, TBT 0.5–
 
 Result: mobile **98** (applied), TBT 40–60 ms, CLS 0.
 
+## American heritage redesign — phase 1 (10 November 2026)
+
+The site was restyled in navy, ivory and gold. The homepage gained the original website's cinematic slideshow and a new crest section ([design-direction.md](design-direction.md)).
+
+| Check | Result |
+| --- | --- |
+| Typecheck, lint, build | ✅ Clean; 32 routes |
+| Playwright (incl. axe on every route) | ✅ **75 passed**, no tests changed |
+| Console errors / horizontal overflow | ✅ None (360–1920px) |
+| Lighthouse desktop, homepage | Performance 94 · Accessibility, Best Practices, SEO 100 · CLS 0 |
+| Lighthouse mobile (applied throttling), homepage | Performance **69–89** · Accessibility, Best Practices, SEO 100 · **CLS 0** · LCP 2.4–3.1 s |
+
+The mobile figures swung with the machine's load. Lighthouse's benchmark index ranged from 211 to 1443 between runs; the earlier 95–96 were measured at about 400 on an idle machine. The largest element on a phone is now the first slideshow photo, rather than text. Measure with PageSpeed Insights after deploy.
+
+Issues found and fixed during this phase:
+- **Contrast.** The scroll-lit introduction rested at 60% opacity (4.48:1). That failed at phone text size, where 4.5:1 applies. Desktop tests passed because the text is larger there. It now rests at 72% (6.72:1).
+- **Layout shift (CLS 0.19–0.22).** When the serif loaded, the hero grew slightly. That moved a decorative gradient strip and the vertically centred text column. The strip was removed, the hero has a fixed minimum height, and on phones the text is anchored to the top. CLS is now 0 in every run.
+- **Unreadable header over the photos.** The homepage header is now solid from the start.
+
+To confirm with the client:
+- the headline "One *crown.*", which replaces "One group." to carry his meaning of the crown;
+- the right to use the slideshow photos, which came from the original website and some of which may be stock images.
+
 ## Logos — the crest and each company's own logo
 
 After reviewing the redesign, Dr. Daniel Davidson asked for two changes (4 November 2026). First, every business keeps its own logo and identity, with no shared emblem carrying only a different name. Second, American Elite Enterprises keeps its old, traditional look. Done:
 
 - **Group logo:** the original crest from the WordPress site, unchanged (crown, gold frame, lion, laurel and flag). It appears in the header and footer beside the name in Cinzel (classical capitals), on About, at the centre of the orbit, in the Open Graph image, in structured data and as the favicons. The metallic logo was removed from the site.
-- **Company logos:** 39 of the 45 companies now show their own logo, taken from their websites and shown unchanged on a white tile. It appears on directory and industry cards, in the homepage sector explorer, in the mega menu, and at the top of each entity page. The other 6 show initials until a logo is supplied. Sources and the missing list are in `docs/company-logos.md`.
+- **Company logos:** all 45 companies show their own logo: 39 taken from their websites and 6 supplied by the client on 9 November 2026 (no logo could be found online for those), and shown unchanged on a white tile. It appears on directory and industry cards, in the homepage sector explorer, in the mega menu, and at the top of each entity page. Sources are in `docs/company-logos.md`.
 - Logo files are small WebP files (max 400×200, 648 KB for all 39) served as-is. The first test run, with every logo going through the image optimiser, timed out on 3 pages on a cold server. Serving the files directly fixed it: with the image cache cleared, **75 of 75 tests passed on the first run**.
 
 Checks: typecheck and lint clean, build 32 routes, Playwright 75 passed with no tests changed.
@@ -109,5 +132,7 @@ Unchanged from the previous audit: 39 of 50 URLs respond normally. To verify man
 3. **Privacy policy** — none existed; one should be added before launch because the form collects personal data.
 4. **21st.dev theme terms** — neither theme page states a licence; confirm if certainty is needed.
 5. **Unreachable company sites** — review the 11 links above.
-6. **Logos** — 6 companies have no logo yet (`docs/company-logos.md`): American Elite eCommerce, Business Star Makers, Global Business Solution, Entireopathic Medicine, Home Health Collaborative Alliance and American Elite Expert Professional Consultants. The businessstarmakers.com domain appears hijacked (its archived copy shows gambling spam). Optionally, a designer could redraw the crest as vector art for print.
+6. **Logos** — the businessstarmakers.com domain appears hijacked (its archived copy shows gambling spam). Optionally, a designer could redraw the crest as vector art for print.
 7. **Hosting** — a Node.js host is required. Nothing has been committed, pushed or deployed.
+8. **Photo rights** — the hero slideshow reuses six photos from the original website (`public/images/heritage/`). Several old-site images are stock photos (iStock, Getty, Pexels file names); confirm a licence covers them.
+9. **Founder story** — phase 2 needs Dr. Davidson's own account of his journey and personal photos; none exist on the original website beyond four portraits.

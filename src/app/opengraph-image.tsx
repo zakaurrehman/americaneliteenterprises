@@ -21,16 +21,16 @@ export default async function Image() {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "72px",
-          background: "radial-gradient(circle at 78% 40%, #dbeafe 0%, #f8fafc 55%)",
-          color: "#0f1729",
+          background: "radial-gradient(circle at 78% 40%, #1c3570 0%, #0b1630 60%)",
+          color: "#fbf8f2",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", maxWidth: 640 }}>
-          <div style={{ fontSize: 24, letterSpacing: 6, color: "#2463ea" }}>AMERICAN ELITE ENTERPRISES</div>
+          <div style={{ fontSize: 24, letterSpacing: 6, color: "#c9a24a" }}>AMERICAN ELITE ENTERPRISES</div>
           <div style={{ fontSize: 76, fontWeight: 700, lineHeight: 1.02, letterSpacing: -3, marginTop: 28 }}>
-            {`${totalCompanies} businesses. ${sectors.length} sectors. One group.`}
+            {`${totalCompanies} businesses. ${sectors.length} sectors. One crown.`}
           </div>
-          <div style={{ fontSize: 26, color: "#475569", marginTop: 28 }}>
+          <div style={{ fontSize: 26, color: "#e6cf94", marginTop: 28 }}>
             A private enterprise group · Los Angeles · Since 1991
           </div>
         </div>
@@ -42,8 +42,8 @@ export default async function Image() {
             width: 380,
             height: 380,
             borderRadius: 999,
-            border: "2px solid rgba(36,99,234,0.30)",
-            boxShadow: "0 0 120px rgba(36,99,234,0.18)",
+            border: "2px solid rgba(201,162,74,0.45)",
+            boxShadow: "0 0 120px rgba(201,162,74,0.25)",
           }}
         >
           <div
@@ -54,7 +54,7 @@ export default async function Image() {
               width: 300,
               height: 300,
               borderRadius: 999,
-              border: "1px solid rgba(15,23,42,0.10)",
+              border: "1px solid rgba(251,248,242,0.15)",
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse needs a plain img */}

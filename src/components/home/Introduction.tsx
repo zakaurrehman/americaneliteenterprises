@@ -14,7 +14,7 @@ export function Introduction() {
         </h2>
 
         <LitStatement
-          className="mt-8 max-w-5xl font-display text-[clamp(1.4rem,2.6vw,2.25rem)] font-medium leading-[1.25] tracking-[-0.035em] text-fg text-balance"
+          className="mt-8 max-w-5xl font-display text-[clamp(1.4rem,2.6vw,2.25rem)] font-medium leading-[1.25] tracking-[-0.01em] text-fg text-balance"
           text="American Elite Enterprises is a private group of businesses that has been around since 1991 in various forms — the parent organization of companies across healthcare, business, technology, charities, legal services, consulting, e-commerce, education and inventions."
         />
 
