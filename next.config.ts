@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
+    // 70 for the hero slideshow photos (large, under a navy wash); 75 is the default.
+    qualities: [70, 75],
   },
   turbopack: {
     rules: {

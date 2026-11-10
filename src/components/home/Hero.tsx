@@ -25,7 +25,11 @@ const slides: Slide[] = [
 
 export function Hero() {
   const lines = [
-    <>{totalCompanies} businesses.</>,
+    // Lead-in: the group's name, smaller than the three beats below it.
+    <span key="lead" className="block font-heritage text-[0.42em] font-semibold leading-tight tracking-[0.04em] text-gold-soft">
+      American Elite Enterprises, Operating
+    </span>,
+    <>Many businesses.</>,
     <>{sectors.length} sectors.</>,
     <>
       One <em className="font-medium text-gold">crown.</em>
@@ -52,8 +56,10 @@ export function Hero() {
                 <Star width={11} height={11} />
                 <Star width={11} height={11} />
                 <Star width={11} height={11} />
+                <Star width={11} height={11} />
+                <Star width={11} height={11} />
               </span>
-              Private enterprise group
+              Private Enterprise Group
               <span aria-hidden>·</span>
               Los Angeles
               <span aria-hidden>·</span>
@@ -61,7 +67,6 @@ export function Hero() {
             </p>
 
             <h1 id="hero-title" className="display-hero mt-7 text-on-accent">
-              <span className="sr-only">American Elite Enterprises: </span>
               {lines.map((line, i) => (
                 <span key={i} className="line-mask">
                   <span style={{ "--line": i } as React.CSSProperties}>{line}</span>
